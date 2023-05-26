@@ -1,62 +1,62 @@
 ---
-title: Editor Setup
+title: Nastavení editoru
 ---
 
 <Intro>
 
-A properly configured editor can make code clearer to read and faster to write. It can even help you catch bugs as you write them! If this is your first time setting up an editor or you're looking to tune up your current editor, we have a few recommendations.
+Správně nastavený editor může vést ke snazšímu porozumění kódu a k jeho rychlejšímu psaní. Dokonce vám může pomoci odhalit chyby, během psaní! Pokud je toto poprvé kdy si natavujete editor nebo hledáte, jak vylepši stávající nastavení, máme pro vás několik tipů.
 
 </Intro>
 
 <YouWillLearn>
 
-* What the most popular editors are
-* How to format your code automatically
+* Jaké jsou nejpopulárnější editory
+* Jak automaticky formátovat kód
 
 </YouWillLearn>
 
-## Your editor {/*your-editor*/}
+## Váš editor {/*your-editor*/}
 
-[VS Code](https://code.visualstudio.com/) is one of the most popular editors in use today. It has a large marketplace of extensions and integrates well with popular services like GitHub. Most of the features listed below can be added to VS Code as extensions as well, making it highly configurable!
+[VS Code](https://code.visualstudio.com/) je jeden z nejpopulárnějších editorů. Má velké tržiště s rozšířeními a integruje populární služby jako je GitHub. Většina vlastností, které budou zmíně, mohou být do VS Code nainstalována jako rozšíření, díky čemuž je vysoce konfigurovatelný!
 
-Other popular text editors used in the React community include:
+Další populární textové editory používané komunitou Reactu:
 
-* [WebStorm](https://www.jetbrains.com/webstorm/) is an integrated development environment designed specifically for JavaScript.
-* [Sublime Text](https://www.sublimetext.com/) has support for JSX and TypeScript, [syntax highlighting](https://stackoverflow.com/a/70960574/458193) and autocomplete built in.
-* [Vim](https://www.vim.org/) is a highly configurable text editor built to make creating and changing any kind of text very efficient. It is included as "vi" with most UNIX systems and with Apple OS X.
+* [WebStorm](https://www.jetbrains.com/webstorm/) je integrované vývojové prostředí navrženo přímo pro JavaScript.
+* [Sublime Text](https://www.sublimetext.com/) má podporu pro JSX a TypeScript, [zvíraznení syntaxí](https://stackoverflow.com/a/70960574/458193) a našeptávač.
+* [Vim](https://www.vim.org/) je vysoce konfigurovatelný textový editor, postavený tak aby tvorba a úprava textu byla velmi efektivní. Jako "vi" je dostupný ve většine UNIX systémech a také v Apple OS X.
 
-## Recommended text editor features {/*recommended-text-editor-features*/}
+## Doporučené vlastnosti textového editoru {/*recommended-text-editor-features*/}
 
-Some editors come with these features built in, but others might require adding an extension. Check to see what support your editor of choice provides to be sure!
+Některé editory mají tyto vlastnosi již integrovány v sobě, ale jiné mohou potřeobvat dodatečné rozšíření. Rozhodně si zkontrolujte co vám zvolený editor nabízí!
 
 ### Linting {/*linting*/}
 
-Code linters find problems in your code as you write, helping you fix them early. [ESLint](https://eslint.org/) is a popular, open source linter for JavaScript. 
+Lintery kódu heldají problémy již během psaní kódu. Díky tomu je možné odhalit a opravit chyby mnohem dříve. [ESLint](https://eslint.org/) je populární, open source linter pro JavaScript.
 
-* [Install ESLint with the recommended configuration for React](https://www.npmjs.com/package/eslint-config-react-app) (be sure you have [Node installed!](https://nodejs.org/en/download/current/))
-* [Integrate ESLint in VSCode with the official extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [Naistalujte si ESlint s doporučenou konfigurací pro React](https://www.npmjs.com/package/eslint-config-react-app) (ujistěte se že máte naistalovaný [Node](https://nodejs.org/en/download/current/)!)
+* [Integrace ESlintu do VSCode pomocí oficiálního rozšíření](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-**Make sure that you've enabled all the [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) rules for your project.** They are essential and catch the most severe bugs early. The recommended [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) preset already includes them.
+**Ujistěte se že máte aktivovány všechny [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) pravidla pro váš projekt.** Jsou nezbytné a odchytí závažné cyhby včas. Doporučené [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) přednastavení je již obsahuje.
 
-### Formatting {/*formatting*/}
+### Formátování {/*formatting*/}
 
-The last thing you want to do when sharing your code with another contributor is get into an discussion about [tabs vs spaces](https://www.google.com/search?q=tabs+vs+spaces)! Fortunately, [Prettier](https://prettier.io/) will clean up your code by reformatting it to conform to preset, configurable rules. Run Prettier, and all your tabs will be converted to spaces—and your indentation, quotes, etc will also all be changed to conform to the configuration. In the ideal setup, Prettier will run when you save your file, quickly making these edits for you.
+Poslední věc kterou byste chtěli je diskuze s dalšími přispěvavateli ohledně [tabulátory vs mezery](https://www.google.com/search?q=tabs+vs+spaces)! Naštěstí, [Prettier](https://prettier.io/) přeformátuje váš kód taky aby vyhovoval přednastavení, popomcí konfigurovatelných pravidel. Spusťe Prettier, a všechny tabulátory budou převedeny na mezery s odsazením, uvozovky a další budou vyhovovat konfiguracia. V ideálním případě, Prettier se spustí při uložení souboru, rychle tak udělá tyto změny za vás.
 
-You can install the [Prettier extension in VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) by following these steps:
+Můžete si naistalovat [Prettier pro VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) následovně:
 
-1. Launch VS Code
-2. Use Quick Open (press Ctrl/Cmd+P)
-3. Paste in `ext install esbenp.prettier-vscode`
-4. Press Enter
+1. Otevřete VS Code
+2. Použijte nabídku rychlého otevření (stiskněte Ctrl/Cmd+P)
+3. Vložte `ext install esbenp.prettier-vscode`
+4. Zmáčkněte Enter
 
-#### Formatting on save {/*formatting-on-save*/}
+#### Formátování při uložení {/*formatting-on-save*/}
 
-Ideally, you should format your code on every save. VS Code has settings for this!
+Ideální je formátovak kód při každém uložení. VS Code má pro to nastavení!
 
-1. In VS Code, press `CTRL/CMD + SHIFT + P`.
-2. Type "settings"
-3. Hit Enter
-4. In the search bar, type "format on save"
-5. Be sure the "format on save" option is ticked!
+1. Ve VS Code, stiskněte `CTRL/CMD + SHIFT + P`.
+2. Napište "nastavení"
+3. Zmáčkněte Enter
+4. Do vyhledávacího políčka zadejte "format on save"
+5. Ujistěte se že "format on save" volba je zaškrtnuta!
 
-> If your ESLint preset has formatting rules, they may conflict with Prettier. We recommend disabling all formatting rules in your ESLint preset using [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) so that ESLint is *only* used for catching logical mistakes. If you want to enforce that files are formatted before a pull request is merged, use [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) for your continuous integration.
+> Pokud vaše konfigurace ESLintu obsahuje také pravidla pro formátování, může nastat konfikt se Prettierem. Doporučujeme vypnout všechny pravidla formátování v konfiguraci Eslintu pomocí [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) takže ESlint bude odchytávat *pouze* logické chyby. Pokud chcete vynutit aby byli soubory zformátovány předtím než bude pull request mergnut, použijte [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) ve vašem systému pro kontinuální integraci.
