@@ -34,7 +34,7 @@ Předpokládejme, že máte stávající stránku, která byla vytvořena s vyu�
 
 Tento postup lze provést ve dvou krocích:
 
-1. **Nakonfigurujte si JavaScriptové prostředí** tak, ať vám umožňí používat [syntaxi JSX](/learn/writing-markup-with-jsx), rozdělit kód do modulů pomocí syntaxe [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) a používat balíčky (např. React) z registru balíčků [npm](https://www.npmjs.com/).
+1. **Nakonfigurujte si JavaScriptové prostředí** tak, ať vám dovolí používat [syntaxi JSX](/learn/writing-markup-with-jsx), rozdělit kód do modulů pomocí syntaxe [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) a používat balíčky (např. React) z registru balíčků [npm](https://www.npmjs.com/).
 2. **Vykreslete React komponenty** tam, kde je chcete na stránce zobrazit.
 
 Přesný postup se bude lišit v závislosti na vašem současném nastavení stránky, takže se podíváme na některé detaily.
@@ -43,7 +43,7 @@ Přesný postup se bude lišit v závislosti na vašem současném nastavení st
 
 Modulární prostředí JavaScriptu umožňuje psát React komponenty v jednotlivých souborech, na rozdíl od psaní celého kódu v jednom souboru. Modulární prostředí navíc nabízí možnost využít různé balíčky od jiných vývojářů, které jsou publikovány v [npm](https://www.npmjs.com/) registru - včetně samotného Reactu! Způsob implementace bude zcela záviset na vašem současném nastavení:
 
-* **If your app is already split into files that use `import` statements,** try to use the setup you already have. Check whether writing `<div />` in your JS code causes a syntax error. If it causes a syntax error, you might need to [transform your JavaScript code with Babel](https://babeljs.io/setup), and enable the [Babel React preset](https://babeljs.io/docs/babel-preset-react) to use JSX.
+* **Pokud je vaše aplikace již rozdělena do souborů využívajících příkazy `import`,** můžete vyzkoušet stávající nastavení. Ujistěte se, že zápis `<div />` ve vašem JavaScript kód nezpůsobuje syntaktickou chybu. Pokud to syntaktickou chybu způsobí, bude možná nutné použít [nástroj Babel k transformaci vašeho JavaScriptového kódu](https://babeljs.io/setup) a aktivovat [předvolbu Babel React](https://babeljs.io/docs/babel-preset-react) pro použití JSX.
 
 * **Pokud vaše aplikace nemá již existující nastavení pro kompilaci JavaScriptových modulů,** nastavte jej pomocí [Vite](https://vitejs.dev/). Komunita Vite se stará o [řadu integrací s backendovými frameworky](https://github.com/vitejs/awesome-vite#integrations-with-backends), včetně Rails, Django a Laravel. Pokud váš backendový framework není v seznamu uveden, [postupujte podle tohoto návodu](https://vitejs.dev/guide/backend-integration.html) a manuálně integrujte Vite do vašeho backendu.
 
@@ -73,7 +73,7 @@ import { createRoot } from 'react-dom/client';
 // Nahradí stávající obsah HTML
 document.body.innerHTML = '<div id="app"></div>';
 
-// Namísto něj vykreslíme React komponent
+// Do něj nyní vykreslíme React komponentu
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Ahoj světe</h1>);
 ```
@@ -88,7 +88,7 @@ První integrace modulárního prostředí JavaScriptu do stávajícího projekt
 
 </Note>
 
-### Krok 2: Vykreslení React komponentu na libovolném místě na stránce {/*step-2-render-react-components-anywhere-on-the-page*/}
+### Krok 2: Vykreslení React komponenty na libovolném místě na stránce {/*step-2-render-react-components-anywhere-on-the-page*/}
 
 V předchozím kroku jste tento kód umístili na začátek hlavního souboru:
 
@@ -98,12 +98,12 @@ import { createRoot } from 'react-dom/client';
 // Nahradí stávající obsah HTML
 document.body.innerHTML = '<div id="app"></div>';
 
-// Namísto něj vykreslíme React komponent
+// Do něj nyní vykreslíme React komponentu
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Ahoj světe</h1>);
 ```
 
-Samozřejmě, v reálném scénáři nebudete chtít vymazat existující obsah HTML!
+Samozřejmě, v reálném scénáři nebudete chtít stávající obsah HTML vymazat!
 
 Tento kód odstraňte.
 
@@ -115,7 +115,7 @@ Spíše než vykreslovat celou stránku pomocí Reactu, budete pravděpodobně c
 <!-- ... další html ... -->
 ```
 
-Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) předat jej do funkce [`createRoot`](/reference/react-dom/client/createRoot) abyste v něm mohli vykreslit vlastní komponentu Reactu:
+Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) a předat ho do funkce [`createRoot`](/reference/react-dom/client/createRoot), abyste v něm mohli následně vykreslit vlastní komponentu React:
 
 <Sandpack>
 
@@ -146,9 +146,9 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Všimněte si, že původní obsah HTML ze souboru `index.html` zůstává nezměněn, zatímco vaše vlastní Reactu komponenta `NavigationBar` se nyní zobrazuje uvnitř `<nav id="navigation">` v rámci vašeho HTML. Pro více informací o vykreslování React komponent uvnitř existující HTML stránky se podívejte na dokumentaci k [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react).
+Všimněte si, že původní obsah HTML ze souboru `index.html` zůstává nezměněn, zatímco vaše vlastní React komponenta `NavigationBar` se nyní zobrazuje uvnitř `<nav id="navigation">` v rámci vašeho HTML. Pro hlubší pochopení vykreslování React komponent uvnitř existující HTML stránky se podívejte na dokumentaci k funkci [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react).
 
-Běžným postupem při implementaci Reactu do existujícího projektu je začít s malými interaktivními komponenty (např. tlačítky) a postupně "postupovat nahoru", dokud celou stránku netvoří komponenty React. Pokud někdy dosáhnete tohoto bodu, doporučujeme hned poté přejít na [React framework](/learn/start-a-new-react-project), abyste z něj mohli vytěžili maximum.
+Běžným postupem při implementaci Reactu do existujícího projektu je začít s malými interaktivními komponenty (např. tlačítky) a postupně "postupovat nahoru", dokud celou stránku netvoří komponenty React. Pokud někdy dosáhnete tohoto bodu, doporučujeme hned poté přejít na [React framework](/learn/start-a-new-react-project), abyste z něj mohli vytěžit maximum.
 
 ## Implementace React Native do existující nativní mobilní aplikace {/*using-react-native-in-an-existing-native-mobile-app*/}
 
