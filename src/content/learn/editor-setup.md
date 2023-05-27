@@ -4,45 +4,45 @@ title: Nastavení editoru
 
 <Intro>
 
-Správně nastavený editor může vést ke snazšímu porozumění kódu a k jeho rychlejšímu psaní. Dokonce vám může pomoci odhalit chyby, během psaní! Pokud je toto poprvé kdy si natavujete editor nebo hledáte, jak vylepši stávající nastavení, máme pro vás několik tipů.
+Dobře nastavený editor vám pomůže ke kódu, který bude snazší číst i psát. Dokonce vám pomůže odhalit chyby již během psaní! Pokud je toto poprvé, kdy si natavujete editor, nebo hledáte, jak vylepši stávající nastavení, máme pro vás několik tipů.
 
 </Intro>
 
 <YouWillLearn>
 
-* Jaké jsou nejpopulárnější editory
+* Které jsou nejpopulárnější editory
 * Jak automaticky formátovat kód
 
 </YouWillLearn>
 
 ## Váš editor {/*your-editor*/}
 
-[VS Code](https://code.visualstudio.com/) je jeden z nejpopulárnějších editorů. Má velké tržiště s rozšířeními a integruje populární služby jako je GitHub. Většina vlastností, které budou zmíně, mohou být do VS Code nainstalována jako rozšíření, díky čemuž je vysoce konfigurovatelný!
+[VS Code](https://code.visualstudio.com/) je jeden z nejpoužívanějších editorů. Obsahuje rozsáhlé tržiště s rozšířeními a také integruje populární služby, jako je například GitHub. Většina vlastností, které zde budou zmíněny, mohou být do VS Code nainstalovány jako rozšíření, což ho činí vysoce konfigurovatelný!
 
-Další populární textové editory používané komunitou Reactu:
+Další populární textové editory v React komunitě:
 
 * [WebStorm](https://www.jetbrains.com/webstorm/) je integrované vývojové prostředí navrženo přímo pro JavaScript.
 * [Sublime Text](https://www.sublimetext.com/) má podporu pro JSX a TypeScript, [zvíraznení syntaxí](https://stackoverflow.com/a/70960574/458193) a našeptávač.
-* [Vim](https://www.vim.org/) je vysoce konfigurovatelný textový editor, postavený tak aby tvorba a úprava textu byla velmi efektivní. Jako "vi" je dostupný ve většine UNIX systémech a také v Apple OS X.
+* [Vim](https://www.vim.org/) je vysoce konfigurovatelný textový editor, postavený tak aby tvorba a úprava textu byla velmi efektivní. Jako "vi" je dostupný ve většině UNIX systémech a také v Apple OS X.
 
 ## Doporučené vlastnosti textového editoru {/*recommended-text-editor-features*/}
 
-Některé editory mají tyto vlastnosi již integrovány v sobě, ale jiné mohou potřeobvat dodatečné rozšíření. Rozhodně si zkontrolujte co vám zvolený editor nabízí!
+Některé editory mají tyto vlastnosi již integrovány v sobě, jiné mohou potřeobvat dodatečné rozšíření. Rozhodně si zkontrolujte co vám zvolený editor nabízí!
 
-### Linting {/*linting*/}
+### Linter {/*linting*/}
 
-Lintery kódu heldají problémy již během psaní kódu. Díky tomu je možné odhalit a opravit chyby mnohem dříve. [ESLint](https://eslint.org/) je populární, open source linter pro JavaScript.
+Lintery upozorňují na problémy již během psaní kódu, což vede k jejich dřívějšímu orpavení. [ESLint](https://eslint.org/) je populární, open source linter pro JavaScript.
 
 * [Naistalujte si ESlint s doporučenou konfigurací pro React](https://www.npmjs.com/package/eslint-config-react-app) (ujistěte se že máte naistalovaný [Node](https://nodejs.org/en/download/current/)!)
 * [Integrace ESlintu do VSCode pomocí oficiálního rozšíření](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-**Ujistěte se že máte aktivovány všechny [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) pravidla pro váš projekt.** Jsou nezbytné a odchytí závažné cyhby včas. Doporučené [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) přednastavení je již obsahuje.
+**Ujistěte se že máte aktivovány všechny [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks) pravidla pro váš projekt.** Jsou nezbytné a odchytí závažné chyby včas. Doporučované [`eslint-config-react-app`](https://www.npmjs.com/package/eslint-config-react-app) přednastavení je již obsahuje.
 
 ### Formátování {/*formatting*/}
 
-Poslední věc kterou byste chtěli je diskuze s dalšími přispěvavateli ohledně [tabulátory vs mezery](https://www.google.com/search?q=tabs+vs+spaces)! Naštěstí, [Prettier](https://prettier.io/) přeformátuje váš kód taky aby vyhovoval přednastavení, popomcí konfigurovatelných pravidel. Spusťe Prettier, a všechny tabulátory budou převedeny na mezery s odsazením, uvozovky a další budou vyhovovat konfiguracia. V ideálním případě, Prettier se spustí při uložení souboru, rychle tak udělá tyto změny za vás.
+Poslední věc, kterou byste chtěli je diskuse s dalšími vývojáři ohledně [tabulátory vs mezery](https://www.google.com/search?q=tabs+vs+spaces)! Naštěstí, [Prettier](https://prettier.io/) zformátuje váš kód tak aby vyhovoval přednastavení, pomocí konfigurovatelných pravidel. Spusťte Prettier, a všechny tabulátory budou převedeny na mezery s odsazením, uvozovky a další budou vyhovovat přednastavení. V ideálním případě se Prettier spustí při uložení souboru a rychle provede tyto změny za vás.
 
-Můžete si naistalovat [Prettier pro VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) následovně:
+[Prettier pro VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) si můžete nainstalovat následovně:
 
 1. Otevřete VS Code
 2. Použijte nabídku rychlého otevření (stiskněte Ctrl/Cmd+P)
@@ -59,4 +59,4 @@ Ideální je formátovak kód při každém uložení. VS Code má pro to nastav
 4. Do vyhledávacího políčka zadejte "format on save"
 5. Ujistěte se že "format on save" volba je zaškrtnuta!
 
-> Pokud vaše konfigurace ESLintu obsahuje také pravidla pro formátování, může nastat konfikt se Prettierem. Doporučujeme vypnout všechny pravidla formátování v konfiguraci Eslintu pomocí [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) takže ESlint bude odchytávat *pouze* logické chyby. Pokud chcete vynutit aby byli soubory zformátovány předtím než bude pull request mergnut, použijte [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) ve vašem systému pro kontinuální integraci.
+> Pokud vaše konfigurace ESLintu obsahuje také pravidla pro formátování, může nastat konflikt s Prettierem. Doporučujeme vypnout všechny pravidla formátování v konfiguraci Eslintu pomocí [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) aby se ESlint zaměřoval *pouze* na logické chyby. Pokud chcete zajistit, že budou soubory zformátovány před sloučením pull requestu, použijte [`prettier --check`](https://prettier.io/docs/en/cli.html#--check) ve vašem systému pro kontinuální integraci.
