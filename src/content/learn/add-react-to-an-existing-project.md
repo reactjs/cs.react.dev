@@ -4,7 +4,7 @@ title: Přidání Reactu do existujícího projektu
 
 <Intro>
 
-Pokud máte v plánu přidat interaktivitu do svého existujícího projektu, není nutné celý projekt přepracovat do Reactu. Můžete jednoduše začlenit React mezi již použité technologie a umístit interaktivní React komponenty, kamkoliv je potřeba.
+Pokud máte v plánu přidat interaktivitu do existujícího projektu, není nutné celý projekt přepracovat do Reactu. Můžete jednoduše začlenit React mezi již použité technologie a umístit interaktivní React komponenty, kamkoliv je potřeba.
 
 </Intro>
 
@@ -75,12 +75,12 @@ document.body.innerHTML = '<div id="app"></div>';
 
 // Do něj nyní vykreslíme React komponentu
 const root = createRoot(document.getElementById('app'));
-root.render(<h1>Ahoj světe</h1>);
+root.render(<h1>Hello, world</h1>);
 ```
 
 </Sandpack>
 
-Pokud byl celý obsah stránky nahrazen nápisem "Ahoj světe", vše funguje správně! Čtěte dál.
+Pokud byl celý obsah stránky nahrazen nápisem "Hello, world", vše funguje správně! Pokračujte ve čtení.
 
 <Note>
 
@@ -100,10 +100,10 @@ document.body.innerHTML = '<div id="app"></div>';
 
 // Do něj nyní vykreslíme React komponentu
 const root = createRoot(document.getElementById('app'));
-root.render(<h1>Ahoj světe</h1>);
+root.render(<h1>Hello, world</h1>);
 ```
 
-Samozřejmě, v reálném scénáři nebudete chtít existující obsah HTML vymazat!
+Samozřejmě, v reálném případě nebudete chtít existující obsah HTML vymazat!
 
 Tento kód odstraňte.
 
@@ -136,7 +136,7 @@ import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
   // TODO: Implementovat navigační lištu
-  return <h1>Ahoj z Reactu!</h1>;
+  return <h1>Hello from React!</h1>;
 }
 
 const domNode = document.getElementById('navigation');
