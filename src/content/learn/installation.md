@@ -45,7 +45,7 @@ Chcete-li vyzkoušet React lokálně na svém počítači, [zkopírujte tento HT
 
 ## Začněte nový projekt v Reactu {/*start-a-new-react-project*/}
 
-Pokud chcete vytvořit novou aplikaci nebo webovou stránku, [začněte nový projekt v Reactu.](/learn/start-a-new-react-project)
+Pokud chcete vytvořit novou React aplikaci nebo webovou stránku, [začněte nový projekt v Reactu.](/learn/start-a-new-react-project)
 
 ## Přidejte React do existujícího projektu {/*add-react-to-an-existing-project*/}
 
