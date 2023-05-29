@@ -17,7 +17,7 @@ React byl od začátku navržen pro postupnou integraci. Můžete používat tol
 
 </YouWillLearn>
 
-## Vyzkoušejte React {/*try-react*/}
+## Vyzkoušejte si React {/*try-react*/}
 
 Není třeba nic instalovat, abyste si mohli React vyzkoušet. Zkuste třeba upravit tento sandbox přímo v prohlížeči!
 
