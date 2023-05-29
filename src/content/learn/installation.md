@@ -39,7 +39,7 @@ Můžete ho také otevřít v nové záložce stisknutím tlačítkas "Fork" v p
 
 Většina stránek v dokumentaci React obsahuje sandboxy jako tento. Mimo React dokumentaci jsou k dispozici mnohé online sandboxy podporující React, jako například: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), nebo [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
 
-### Vyzkoušejte React lokálně {/*try-react-locally*/}
+### Vyzkoušejte si React lokálně {/*try-react-locally*/}
 
 Chcete-li vyzkoušet React lokálně na svém počítači, [zkopírujte tento HTML kód](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) do souboru `index.html` a ten následně otevřete v prohlížeči. Můžete také kliknout kdekoli na  [této stránce](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) pravým tlačítkem myši a vybrat možnost "uložit jako", abyste si soubor stáhli a otevřeli jej v prohlížeči.
 
