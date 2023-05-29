@@ -12,7 +12,7 @@ React byl od začátku navržen pro postupnou integraci. Můžete používat tol
 
 * [Jak začít nový projekt v Reactu](/learn/start-a-new-react-project)
 * [Jak přidat React do existujícího projektu](/learn/add-react-to-an-existing-project)
-* [Jak nastavit váš editor](/learn/editor-setup)
+* [Jak si nastavit editor](/learn/editor-setup)
 * [Jak instalovat nástroje pro React vývojáře](/learn/react-developer-tools)
 
 </YouWillLearn>
