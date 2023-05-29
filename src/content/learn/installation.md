@@ -12,12 +12,12 @@ React byl od začátku navržen pro postupnou integraci. Můžete využívat z R
 
 * [Jak začít nový projekt v Reactu](/learn/start-a-new-react-project)
 * [Jak přidat React do existujícího projektu](/learn/add-react-to-an-existing-project)
-* [Jak nastavit váš editor](/learn/editor-setup)
+* [Jak si nastavit editor](/learn/editor-setup)
 * [Jak instalovat nástroje pro React vývojáře](/learn/react-developer-tools)
 
 </YouWillLearn>
 
-## Vyzkoušejte React {/*try-react*/}
+## Vyzkoušejte si React {/*try-react*/}
 
 Není třeba nic instalovat, abyste si mohli React vyzkoušet. Zkuste třeba upravit tento sandbox přímo v prohlížeči!
 
@@ -35,17 +35,17 @@ export default function App() {
 
 </Sandpack>
 
-Můžete ho také otevřít v nové záložce stisknutím tlačítkas "Fork" v pravém horním rohu.
+Můžete ho také otevřít v nové záložce stisknutím tlačítka "Fork" v pravém horním rohu.
 
 Většina stránek v dokumentaci React obsahuje sandboxy jako tento. Mimo React dokumentaci jsou k dispozici mnohé online sandboxy podporující React, jako například: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), nebo [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
 
-### Vyzkoušejte React lokálně {/*try-react-locally*/}
+### Vyzkoušejte si React lokálně {/*try-react-locally*/}
 
-Chcete-li vyzkoušet React lokálně na svém počítači, [zkopírujte tento HTML kód](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) do souboru `index.html` a ten následně otevřete v prohlížeči. Můžete také kliknout kdekoli na  [této stránce](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) pravým tlačítkem myši a vybrat možnost "uložit jako", abyste si soubor stáhli a otevřeli jej ve svém prohlížeči.
+Chcete-li vyzkoušet React lokálně na svém počítači, [zkopírujte tento HTML kód](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) do souboru `index.html` a ten následně otevřete v prohlížeči. Můžete také kliknout kdekoli na  [této stránce](https://gist.githubusercontent.com/gaearon/0275b1e1518599bbeafcde4722e79ed1/raw/db72dcbf3384ee1708c4a07d3be79860db04bff0/example.html) pravým tlačítkem myši a vybrat možnost "uložit jako", abyste si soubor stáhli a otevřeli jej v prohlížeči.
 
 ## Začněte nový projekt v Reactu {/*start-a-new-react-project*/}
 
-Pokud chcete vytvořit novou aplikaci nebo webovou stránku, [začněte nový projekt v Reactu.](/learn/start-a-new-react-project)
+Pokud chcete vytvořit novou React aplikaci nebo webovou stránku, [začněte nový projekt v Reactu.](/learn/start-a-new-react-project)
 
 ## Přidejte React do existujícího projektu {/*add-react-to-an-existing-project*/}
 
