@@ -35,7 +35,7 @@ export default function App() {
 
 </Sandpack>
 
-Můžete ho také otevřít v nové záložce stisknutím tlačítkas "Fork" v pravém horním rohu.
+Můžete ho také otevřít v nové záložce stisknutím tlačítka "Fork" v pravém horním rohu.
 
 Většina stránek v dokumentaci React obsahuje sandboxy jako tento. Mimo React dokumentaci jsou k dispozici mnohé online sandboxy podporující React, jako například: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), nebo [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
 
