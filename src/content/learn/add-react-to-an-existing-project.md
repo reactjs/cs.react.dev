@@ -35,7 +35,7 @@ Předpokládejme, že máte existující stránku, která byla vytvořena s vyu�
 Tento postup lze provést ve dvou krocích:
 
 1. **Nakonfigurujte si JavaScriptové prostředí** tak, ať vám dovolí používat [syntaxi JSX](/learn/writing-markup-with-jsx), rozdělit kód do modulů pomocí syntaxe [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) a používat balíčky (např. React) z registru balíčků [npm](https://www.npmjs.com/).
-2. **Vykreslete React komponenty** tam, kde je chcete na stránce zobrazit.
+2. **Vyrendrujte React komponenty** tam, kde je chcete na stránce zobrazit.
 
 Přesný postup se bude lišit v závislosti na vašem existujícím nastavení stránky, takže se podíváme na některé detaily.
 
@@ -73,7 +73,7 @@ import { createRoot } from 'react-dom/client';
 // Nahradí existující obsah HTML
 document.body.innerHTML = '<div id="app"></div>';
 
-// Do něj nyní vykreslíme React komponentu
+// Do něj nyní vyrendrujeme React komponentu
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
@@ -88,7 +88,7 @@ První integrace modulárního prostředí JavaScriptu do existujícího projekt
 
 </Note>
 
-### Krok 2: Vykreslení React komponenty na libovolném místě na stránce {/*step-2-render-react-components-anywhere-on-the-page*/}
+### Krok 2: Vyrendrujte React komponenty na libovolném místě na stránce {/*step-2-render-react-components-anywhere-on-the-page*/}
 
 V předchozím kroku jste tento kód umístili na začátek hlavního souboru:
 
@@ -98,7 +98,7 @@ import { createRoot } from 'react-dom/client';
 // Nahradí existující obsah HTML
 document.body.innerHTML = '<div id="app"></div>';
 
-// Do něj nyní vykreslíme React komponentu
+// Do něj nyní vyrendrujeme React komponentu
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
@@ -107,7 +107,7 @@ Samozřejmě, v reálném případě nebudete chtít existující obsah HTML vym
 
 Tento kód odstraňte.
 
-Spíše než vykreslovat celou stránku pomocí Reactu, budete chtít vykreslit React komponenty na specifických místech v HTML. Otevřete svou HTML stránku (nebo serverové šablony, které ji generují) a přidejte například unikátní atribut [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) k libovolnému tagu:
+Spíše než rendrovat celou stránku pomocí Reactu, budete chtít vyrendrovat React komponenty na specifických místech v HTML. Otevřete svou HTML stránku (nebo serverové šablony, které ji generují) a přidejte například unikátní atribut [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) k libovolnému tagu:
 
 ```html
 <!-- ... někde v html ... -->
@@ -115,7 +115,7 @@ Spíše než vykreslovat celou stránku pomocí Reactu, budete chtít vykreslit 
 <!-- ... více html ... -->
 ```
 
-Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) a předat ho do funkce [`createRoot`](/reference/react-dom/client/createRoot), abyste v něm mohli následně vykreslit vlastní komponentu React:
+Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) a předat ho do funkce [`createRoot`](/reference/react-dom/client/createRoot), abyste v něm mohli následně vyrendrovat vlastní komponentu React:
 
 <Sandpack>
 
@@ -146,7 +146,7 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Všimněte si, že původní obsah HTML ze souboru `index.html` zůstává nezměněn, zatímco vaše vlastní React komponenta `NavigationBar` se nyní zobrazuje uvnitř `<nav id="navigation">` v rámci vašeho HTML. Pro hlubší pochopení vykreslování React komponent uvnitř existující HTML stránky se podívejte na dokumentaci k funkci [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react).
+Všimněte si, že původní obsah HTML ze souboru `index.html` zůstává nezměněn, zatímco vaše vlastní React komponenta `NavigationBar` se nyní zobrazuje uvnitř `<nav id="navigation">` v rámci vašeho HTML. Pro hlubší pochopení rendrování React komponentů uvnitř existující HTML stránky, doporučujeme prostudovat dokumentaci k funkci [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react).
 
 Běžným postupem při implementaci Reactu do existujícího projektu je začít s malými interaktivními komponenty (např. tlačítky) a postupně "postupovat nahoru", dokud celou stránku netvoří komponenty React. Pokud někdy dosáhnete tohoto bodu, doporučujeme hned poté přejít na [React framework](/learn/start-a-new-react-project), abyste z něj mohli vytěžit maximum.
 
