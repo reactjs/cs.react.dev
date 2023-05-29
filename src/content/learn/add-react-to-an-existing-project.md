@@ -1,59 +1,59 @@
 ---
-title: Add React to an Existing Project
+title: Přidání Reactu do existujícího projektu
 ---
 
 <Intro>
 
-If you want to add some interactivity to your existing project, you don't have to rewrite it in React. Add React to your existing stack, and render interactive React components anywhere.
+Pokud máte v plánu přidat interaktivitu do existujícího projektu, není nutné celý projekt přepracovat do Reactu. Můžete jednoduše začlenit React mezi již použité technologie a umístit interaktivní React komponenty, kamkoliv je potřeba.
 
 </Intro>
 
 <Note>
 
-**You need to install [Node.js](https://nodejs.org/en/) for local development.** Although you can [try React](/learn/installation#try-react) online or with a simple HTML page, realistically most JavaScript tooling you'll want to use for development requires Node.js.
+**Pro vývoj v lokálním prostředí je nutné mít nainstalovaný [Node.js](https://nodejs.org/en/).** I když máte možnost si [vyzkoušet React](/learn/installation#try-react) online nebo na jednoduché HTML stránce, realita je taková, že většina JavaScriptových nástrojů, které budete chtít použít pro vývoj, vyžaduje Node.js.
 
 </Note>
 
-## Using React for an entire subroute of your existing website {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
+## Implementace Reactu do segmentu cesty vaší existující webové stránky {/*using-react-for-an-entire-subroute-of-your-existing-website*/}
 
-Let's say you have an existing web app at `example.com` built with another server technology (like Rails), and you want to implement all routes starting with `example.com/some-app/` fully with React.
+Představme si, že máte existující webovou aplikaci na adrese `example.com`, která byla vytvořena za pomocí jiné serverové technologie (např. Rails) a chcete , aby všechny cesty začínající s `example.com/obchod/` byly plně implementované pomocí Reactu.
 
-Here's how we recommend to set it up:
+Zde je náš doporučený postup:
 
-1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
-2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+1. **Vytvořte část aplikace** pomocí některého z [frameworků založených na Reactu](/learn/start-a-new-react-project).
+2. **Nastavte `/obchod` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/obchod/` zpracovávala vaše aplikace v Reactu.
 
-This ensures the React part of your app can [benefit from the best practices](/learn/start-a-new-react-project#can-i-use-react-without-a-framework) baked into those frameworks.
+Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/start-a-new-react-project#can-i-use-react-without-a-framework), které jsou součástí těchto frameworků.
 
-Many React-based frameworks are full-stack and let your React app take advantage of the server. However, you can use the same approach even if you can't or don't want to run JavaScript on the server. In that case, serve the HTML/CSS/JS export ([`next export` output](https://nextjs.org/docs/advanced-features/static-html-export) for Next.js, default for Gatsby) at `/some-app/` instead.
+Mnoho frameworků založených na Reactu je full-stack, což umožňuje vaší React aplikaci využít server. Tento přístup můžete uplatnit i v případě, kdy nemůžete nebo nechcete na serveru používat JavaScript. V takové situaci místo toho zpřístupníte export HTML/CSS/JS ([output v `next export`](https://nextjs.org/docs/advanced-features/static-html-export) pro Next.js, default pro Gatsby) na adresářové cestě `/obchod/`.
 
-## Using React for a part of your existing page {/*using-react-for-a-part-of-your-existing-page*/}
+## Implementace Reactu do konkrétní části vaší existující webové stránky {/*using-react-for-a-part-of-your-existing-page*/}
 
-Let's say you have an existing page built with another technology (either a server one like Rails, or a client one like Backbone), and you want to render interactive React components somewhere on that page. That's a common way to integrate React--in fact, it's how most React usage looked at Meta for many years!
+Předpokládejme, že máte existující stránku, která byla vytvořena s využitím jiné technologie, ať už serverové (např. Rails) nebo klientské (jako je Backbone), a chcete na ní implementovat interaktivní komponenty React. Tento postup je běžnou formou integrace Reactu. Ve skutečnosti se React takto používal řadu let ve společnosti Meta!
 
-You can do this in two steps:
+Tento postup lze provést ve dvou krocích:
 
-1. **Set up a JavaScript environment** that lets you use the [JSX syntax](/learn/writing-markup-with-jsx), split your code into modules with the [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) syntax, and use packages (for example, React) from the [npm](https://www.npmjs.com/) package registry.
-2. **Render your React components** where you want to see them on the page.
+1. **Nakonfigurujte si JavaScriptové prostředí** tak, ať vám dovolí používat [syntaxi JSX](/learn/writing-markup-with-jsx), rozdělit kód do modulů pomocí syntaxe [`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) / [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export) a používat balíčky (např. React) z registru balíčků [npm](https://www.npmjs.com/).
+2. **Vyrendrujte React komponenty** tam, kde je chcete na stránce zobrazit.
 
-The exact approach depends on your existing page setup, so let's walk through some details.
+Přesný postup se bude lišit v závislosti na vašem existujícím nastavení stránky, takže se podíváme na některé detaily.
 
-### Step 1: Set up a modular JavaScript environment {/*step-1-set-up-a-modular-javascript-environment*/}
+### Krok 1: Nastavení modulárního prostředí JavaScriptu {/*step-1-set-up-a-modular-javascript-environment*/}
 
-A modular JavaScript environment lets you write your React components in individual files, as opposed to writing all of your code in a single file. It also lets you use all the wonderful packages published by other developers on the [npm](https://www.npmjs.com/) registry--including React itself! How you do this depends on your existing setup:
+Modulární prostředí JavaScriptu umožňuje psát React komponenty v jednotlivých souborech, na rozdíl od psaní celého kódu v jednom souboru. Modulární prostředí navíc nabízí možnost využít různé balíčky od jiných vývojářů, které jsou publikovány v [npm](https://www.npmjs.com/) registru - včetně samotného Reactu! Způsob implementace bude zcela záviset na vašem existujícím nastavení:
 
-* **If your app is already split into files that use `import` statements,** try to use the setup you already have. Check whether writing `<div />` in your JS code causes a syntax error. If it causes a syntax error, you might need to [transform your JavaScript code with Babel](https://babeljs.io/setup), and enable the [Babel React preset](https://babeljs.io/docs/babel-preset-react) to use JSX.
+* **Pokud je vaše aplikace již rozdělena do souborů využívajících příkazy `import`,** můžete vyzkoušet existující nastavení. Ujistěte se, že zápis `<div />` ve vašem JavaScript kód nezpůsobuje syntaktickou chybu. Pokud to syntaktickou chybu způsobí, bude možná nutné použít [nástroj Babel k transformaci vašeho JavaScriptového kódu](https://babeljs.io/setup) a aktivovat [předvolbu Babel React](https://babeljs.io/docs/babel-preset-react) pro použití JSX.
 
-* **If your app doesn't have an existing setup for compiling JavaScript modules,** set it up with [Vite](https://vitejs.dev/). The Vite community maintains [many integrations with backend frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), including Rails, Django, and Laravel. If your backend framework is not listed, [follow this guide](https://vitejs.dev/guide/backend-integration.html) to manually integrate Vite builds with your backend.
+* **Pokud vaše aplikace nemá již existující nastavení pro kompilaci JavaScriptových modulů,** nastavte jej pomocí [Vite](https://vitejs.dev/). Komunita Vite se stará o [řadu integrací s backendovými frameworky](https://github.com/vitejs/awesome-vite#integrations-with-backends), včetně Rails, Django a Laravel. Pokud váš backendový framework není v seznamu uveden, [postupujte podle tohoto návodu](https://vitejs.dev/guide/backend-integration.html) a manuálně integrujte Vite do vašeho backendu.
 
-To check whether your setup works, run this command in your project folder:
+Pokud chcete ověřit, zda je vaše nastavení funkční, spusťte následující příkaz v adresáři projektu:
 
 <TerminalBlock>
 npm install react react-dom
 </TerminalBlock>
 
-Then add these lines of code at the top of your main JavaScript file (it might be called `index.js` or `main.js`):
+Poté přidejte následující řádky kódu na začátek svého hlavního JavaScriptového souboru (jméno souboru může být `index.js`nebo `main.js`):
 
 <Sandpack>
 
@@ -62,7 +62,7 @@ Then add these lines of code at the top of your main JavaScript file (it might b
 <html>
   <head><title>My app</title></head>
   <body>
-    <!-- Your existing page content (in this example, it gets replaced) -->
+    <!-- Váš stávající obsah stránky (v tomto příkladu bude nahrazen) -->
   </body>
 </html>
 ```
@@ -70,52 +70,52 @@ Then add these lines of code at the top of your main JavaScript file (it might b
 ```js index.js active
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// Nahradí existující obsah HTML
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// Do něj nyní vyrendrujeme React komponentu
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
 </Sandpack>
 
-If the entire content of your page was replaced by a "Hello, world!", everything worked! Keep reading.
+Pokud byl celý obsah stránky nahrazen nápisem "Hello, world", vše funguje správně! Pokračujte ve čtení.
 
 <Note>
 
-Integrating a modular JavaScript environment into an existing project for the first time can feel intimidating, but it's worth it! If you get stuck, try our [community resources](/community) or the [Vite Chat](https://chat.vitejs.dev/).
+První integrace modulárního prostředí JavaScriptu do existujícího projektu může působit zastrašujícím dojmem, ale výsledky stojí za to! Pokud narazíte na problémy, využijte naše [komunitní zdroje ](/community) nebo se obrate na [Vite Chat](https://chat.vitejs.dev/).
 
 </Note>
 
-### Step 2: Render React components anywhere on the page {/*step-2-render-react-components-anywhere-on-the-page*/}
+### Krok 2: Vyrendrujte React komponenty na libovolném místě na stránce {/*step-2-render-react-components-anywhere-on-the-page*/}
 
-In the previous step, you put this code at the top of your main file:
+V předchozím kroku jste tento kód umístili na začátek hlavního souboru:
 
 ```js
 import { createRoot } from 'react-dom/client';
 
-// Clear the existing HTML content
+// Nahradí existující obsah HTML
 document.body.innerHTML = '<div id="app"></div>';
 
-// Render your React component instead
+// Do něj nyní vyrendrujeme React komponentu
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
 ```
 
-Of course, you don't actually want to clear the existing HTML content!
+Samozřejmě, v reálném případě nebudete chtít existující obsah HTML vymazat!
 
-Delete this code.
+Tento kód odstraňte.
 
-Instead, you probably want to render your React components in specific places in your HTML. Open your HTML page (or the server templates that generate it) and add a unique [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) attribute to any tag, for example:
+Spíše než rendrovat celou stránku pomocí Reactu, budete chtít vyrendrovat React komponenty na specifických místech v HTML. Otevřete svou HTML stránku (nebo serverové šablony, které ji generují) a přidejte například unikátní atribut [`id`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id) k libovolnému tagu:
 
 ```html
-<!-- ... somewhere in your html ... -->
+<!-- ... někde v html ... -->
 <nav id="navigation"></nav>
-<!-- ... more html ... -->
+<!-- ... více html ... -->
 ```
 
-This lets you find that HTML element with [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) and pass it to [`createRoot`](/reference/react-dom/client/createRoot) so that you can render your own React component inside:
+Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) a předat ho do funkce [`createRoot`](/reference/react-dom/client/createRoot), abyste v něm mohli následně vyrendrovat vlastní komponentu React:
 
 <Sandpack>
 
@@ -124,9 +124,9 @@ This lets you find that HTML element with [`document.getElementById`](https://de
 <html>
   <head><title>My app</title></head>
   <body>
-    <p>This paragraph is a part of HTML.</p>
+    <p>Tento odstavec je součástí HTML.</p>
     <nav id="navigation"></nav>
-    <p>This paragraph is also a part of HTML.</p>
+    <p>Tento odstavec je také součástí HTML.</p>
   </body>
 </html>
 ```
@@ -135,7 +135,7 @@ This lets you find that HTML element with [`document.getElementById`](https://de
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
-  // TODO: Actually implement a navigation bar
+  // TODO: Implementovat navigační lištu
   return <h1>Hello from React!</h1>;
 }
 
@@ -146,10 +146,10 @@ root.render(<NavigationBar />);
 
 </Sandpack>
 
-Notice how the original HTML content from `index.html` is preserved, but your own `NavigationBar` React component now appears inside the `<nav id="navigation">` from your HTML. Read the [`createRoot` usage documentation](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) to learn more about rendering React components inside an existing HTML page.
+Všimněte si, že původní obsah HTML ze souboru `index.html` zůstává nezměněn, zatímco vaše vlastní React komponenta `NavigationBar` se nyní zobrazuje uvnitř `<nav id="navigation">` v rámci vašeho HTML. Pro hlubší pochopení rendrování React komponentů uvnitř existující HTML stránky, doporučujeme prostudovat dokumentaci k funkci [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react).
 
-When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/start-a-new-react-project) right after to get the most out of React.
+Běžným postupem při implementaci Reactu do existujícího projektu je začít s malými interaktivními komponenty (např. tlačítky) a postupně "postupovat nahoru", dokud celou stránku netvoří komponenty React. Pokud někdy dosáhnete tohoto bodu, doporučujeme hned poté přejít na [React framework](/learn/start-a-new-react-project), abyste z něj mohli vytěžit maximum.
 
-## Using React Native in an existing native mobile app {/*using-react-native-in-an-existing-native-mobile-app*/}
+## Implementace React Native do existující nativní mobilní aplikace {/*using-react-native-in-an-existing-native-mobile-app*/}
 
-[React Native](https://reactnative.dev/) can also be integrated into existing native apps incrementally. If you have an existing native app for Android (Java or Kotlin) or iOS (Objective-C or Swift), [follow this guide](https://reactnative.dev/docs/integration-with-existing-apps) to add a React Native screen to it.
+[React Native](https://reactnative.dev/) lze také postupně integrovat do existujících nativních aplikací. Pokud máte existující nativní aplikaci pro Android (Java nebo Kotlin) nebo iOS (Objective-C nebo Swift), [následujte tento návod](https://reactnative.dev/docs/integration-with-existing-apps) pro přidání obrazovky s React Native.
