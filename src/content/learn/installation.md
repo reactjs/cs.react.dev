@@ -4,7 +4,7 @@ title: Instalace
 
 <Intro>
 
-React byl od začátku navržen pro postupnou integraci. Můžete používat tolik Reactu, kolik potřebujete. Ať už chcete získat představu o Reactu, přidat nějakou interaktivitu do HTML stránky, nebo začít komplexní aplikaci poháněnou Reactem, tato sekce vám pomůže začít.
+React byl od začátku navržen pro postupnou integraci. Můžete využívat z Reactu tolik, kolik potřebujete. Ať už chcete získat představu o Reactu, přidat nějakou interaktivitu do HTML stránky, nebo začít komplexní aplikaci poháněnou Reactem, tato sekce vám pomůže začít.
 
 </Intro>
 
