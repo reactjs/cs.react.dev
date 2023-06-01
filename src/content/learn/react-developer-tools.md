@@ -1,61 +1,60 @@
 ---
-title: React Developer Tools
+title: Vývojářské nástroje Reactu
 ---
 
 <Intro>
 
-Use React Developer Tools to inspect React [components](/learn/your-first-component), edit [props](/learn/passing-props-to-a-component) and [state](/learn/state-a-components-memory), and identify performance problems.
+Vývojářské nástroje Reactu slouží k prozkoumávání React [komponent](/learn/your-first-component), k úpravám [vlastností](/learn/passing-props-to-a-component) a [stavů](/learn/state-a-components-memory), a k detekování možných problémů s výkonem aplikace.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to install React Developer Tools
+* Jak nainstalovat Vývojářské nástroje Reactu
 
 </YouWillLearn>
 
-## Browser extension {/*browser-extension*/}
+## Rozšíření prohlížeče {/*browser-extension*/}
 
-The easiest way to debug websites built with React is to install the React Developer Tools browser extension. It is available for several popular browsers:
+Nejjednodušší způsob, jak ladit webové stránky vytvořené pomocí Reactu, je nainstalovat si Vývojářské nástroje Reactu jako rozšíření do vašeho prohlížeče. Tyto nástroje jsou k dispozici pro následující prohlížeče:
 
-* [Install for **Chrome**](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-* [Install for **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-* [Install for **Edge**](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
+* [Instalovat pro **Chrome**](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+* [Instalovat pro **Firefox**](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+* [Instalovat pro **Edge**](https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil)
 
-Now, if you visit a website **built with React,** you will see the _Components_ and _Profiler_ panels.
+Když po instalaci navštívíte jakoukoliv webovou stránku **vytvořenou v Reactu,** uvidíte panely s názvy _Components_ a _Profiler_.
 
 ![React Developer Tools extension](/images/docs/react-devtools-extension.png)
 
-### Safari and other browsers {/*safari-and-other-browsers*/}
-For other browsers (for example, Safari), install the [`react-devtools`](https://www.npmjs.com/package/react-devtools) npm package:
+### Safari a jiné prohlížeče {/*safari-and-other-browsers*/}
+Pro další prohlížeče (jako například Safari) si nainstalujte npm balíček [`react-devtools`](https://www.npmjs.com/package/react-devtools):
 ```bash
 # Yarn
 yarn global add react-devtools
 
 # Npm
-npm install -g react-devtools
+npm install -g react-devtools/
 ```
 
-Next open the developer tools from the terminal:
+Poté otevřte tyto nástroje pomocí Terminálu:
 ```bash
 react-devtools
 ```
 
-Then connect your website by adding the following `<script>` tag to the beginning of your website's `<head>`:
+A dále je napojte do vaší stránky přídáním `<script>` tagu na začátek `<head>`:
 ```html {3}
 <html>
   <head>
     <script src="http://localhost:8097"></script>
 ```
 
-Reload your website in the browser now to view it in developer tools.
-
+Nyní obnovte stránku v prohlížeči a uvidíte Vývojářské nástroje.
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
-## Mobile (React Native) {/*mobile-react-native*/}
-React Developer Tools can be used to inspect apps built with [React Native](https://reactnative.dev/) as well.
+## Mobilní prostředí (React Native) {/*mobile-react-native*/}
+Vývojářské nástroje Reactu lze zároveň využít i k prozkoumávání aplikací vytvořených za pomocí [React Native](https://reactnative.dev/).
 
-The easiest way to use React Developer Tools is to install it globally:
+Nejjednodušší způsob je nainstalovat tyto nástroje globálně:
 ```bash
 # Yarn
 yarn global add react-devtools
@@ -64,13 +63,13 @@ yarn global add react-devtools
 npm install -g react-devtools
 ```
 
-Next open the developer tools from the terminal.
+Poté nástroje otevřte v Terminálu:
 ```bash
 react-devtools
 ```
 
-It should connect to any local React Native app that's running.
+Nástroje se nyní sami spojí s vaší React Native aplikací, která běží v lokálním prostředí.
 
-> Try reloading the app if developer tools doesn't connect after a few seconds.
+> Zkuste obnovit aplikaci pokud se nástroje po několika sekundách nepřipojí sami.
 
-[Learn more about debugging React Native.](https://reactnative.dev/docs/debugging)
+[Zjistit více o ladění React Native.](https://reactnative.dev/docs/debugging)
