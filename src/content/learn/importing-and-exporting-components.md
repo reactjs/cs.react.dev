@@ -130,26 +130,26 @@ Obě `'./Gallery.js'` nebo `'./Gallery'` boudou fungovat s Reactem, ikdyž prvn�
 
 #### Defaultní vs jmenné exporty {/*default-vs-named-exports*/}
 
-There are two primary ways to export values with JavaScript: default exports and named exports. So far, our examples have only used default exports. But you can use one or both of them in the same file. **A file can have no more than one _default_ export, but it can have as many _named_ exports as you like.**
+Máme dva hlavní způsoby, jak exportovat hodnoty v JavaScriptu, defaultní a jmenný export. Pro zatím jsme v našich příkladech používali pouze defaultní exporty. Můžete použít jeden nebo oba způsoby ve stejném souboru. **Soubor může mít pouze jeden _defaultní_ export, ale může mít několik _jmenných_ exportů.**
 
-![Default and named exports](/images/docs/illustrations/i_import-export.svg)
+![Defaultní a jmenné exporty](/images/docs/illustrations/i_import-export.svg)
 
-How you export your component dictates how you must import it. You will get an error if you try to import a default export the same way you would a named export! This chart can help you keep track:
+Druh exportu komponenty určuje jak ji musíte naimportovat. V případě, že se pokusíte importovat defaultní export jako jmenný, dostanete error! Tato tabulka vám pomůže s určením typu:
 
-| Syntax           | Export statement                           | Import statement                          |
+| Syntaxe           | Výraz pro export                           | Výraz pro import                          |
 | -----------      | -----------                                | -----------                               |
-| Default  | `export default function Button() {}` | `import Button from './Button.js';`     |
-| Named    | `export function Button() {}`         | `import { Button } from './Button.js';` |
+| Defalutní  | `export default function Button() {}` | `import Button from './Button.js';`     |
+| Jmenný    | `export function Button() {}`         | `import { Button } from './Button.js';` |
 
-When you write a _default_ import, you can put any name you want after `import`. For example, you could write `import Banana from './Button.js'` instead and it would still provide you with the same default export. In contrast, with named imports, the name has to match on both sides. That's why they are called _named_ imports!
+S _defaultním_ importem můžete za `import` vložit jakékoliv jméno. Na příklad můžete napsat `import Banana from './Button.js'` a stále dostane defaulutní export. Na rozdíl, v případě jmenných importů, musí jméno odpovídat na obou stranách. Proto se jim říká _jmenné_ importy!
 
-**People often use default exports if the file exports only one component, and use named exports if it exports multiple components and values.** Regardless of which coding style you prefer, always give meaningful names to your component functions and the files that contain them. Components without names, like `export default () => {}`, are discouraged because they make debugging harder.
+**Defaultní export se většinou používá pokud soubor exportuje pouze jednu komponentu. Naopak jmenný export se většinou používá tam kde se exportuje více komponent nebo hodnot z jednoho souboru.** Nehledě jaký programaátorský styl preferujete, dávejte komponentám a souborům které je obsahují smysluplné názvy. Komponenty bez jmen, například `export default () => {}`, jsou nežádoucí protože je těžší je deubgovat.
 
 </DeepDive>
 
-## Exporting and importing multiple components from the same file {/*exporting-and-importing-multiple-components-from-the-same-file*/}
+## Exportování a importování vícero komponent ze stejného souboru {/*exporting-and-importing-multiple-components-from-the-same-file*/}
 
-What if you want to show just one `Profile` instead of a gallery? You can export the `Profile` component, too. But `Gallery.js` already has a *default* export, and you can't have _two_ default exports. You could create a new file with a default export, or you could add a *named* export for `Profile`. **A file can only have one default export, but it can have numerous named exports!**
+Co když chceme zobrazit pouze `Profile` namísto galerie? Komponentu `Profile` můžete vyexportovat také. Ale soubor `Gallery.js` již má *defaultní* export a nemůže mít _two_ defaultní exporty. Můžete vytvořit nový soubor s defaultním exportem, nebo můžete přidat jmenný export pro komponentu `Profile`. **Soubor může mít pouze jeden defaultní export, ale může mít vícero jmenných exportů!**
 
 <Note>
 
@@ -262,7 +262,7 @@ Můžete použít buďto defaultní nebo jmenný export pro `Profile`, ale ujist
 
 <Hint>
 
-Nezapomeťe naimportovat vaše komponenty tam, kde je voláte. Nepoužívá komponenta `Gallery` komponentu `Profile` také?
+Nezapomeňte naimportovat vaše komponenty tam, kde je voláte. Nepoužívá komponenta `Gallery` komponentu `Profile` také?
 
 </Hint>
 
