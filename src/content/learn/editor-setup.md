@@ -4,7 +4,7 @@ title: Nastavení editoru
 
 <Intro>
 
-Dobře nastavený editor vám pomůže ke kódu, který bude snazší číst i psát. Dokonce vám pomůže odhalit chyby již během psaní! Pokud je toto poprvé, kdy si nastavujete editor, nebo hledáte, jak vylepši stávající nastavení, máme pro vás několik tipů.
+Dobře nastavený editor vám pomůže ke kódu, který bude snazší číst i psát. Dokonce vám pomůže odhalit chyby již během psaní! Pokud je toto poprvé, kdy si nastavujete editor, nebo hledáte, jak vylepšit stávající nastavení, máme pro vás několik tipů.
 
 </Intro>
 
