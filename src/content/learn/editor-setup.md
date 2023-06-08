@@ -10,7 +10,7 @@ Dobře nastavený editor vám pomůže ke kódu, který bude snazší číst i p
 
 <YouWillLearn>
 
-* Které jsou nejpopulárnější editory
+* Jaké jsou nejpopulárnější editory
 * Jak automaticky formátovat kód
 
 </YouWillLearn>
