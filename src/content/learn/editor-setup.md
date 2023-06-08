@@ -40,7 +40,7 @@ Lintery upozorňují na problémy již během psaní kódu, což vede k jejich d
 
 ### Formátování {/*formatting*/}
 
-Poslední věc, kterou byste chtěli je diskuse s dalšími vývojáři ohledně [tabulátory vs mezery](https://www.google.com/search?q=tabs+vs+spaces)! Naštěstí, [Prettier](https://prettier.io/) zformátuje váš kód tak aby vyhovoval přednastavení, pomocí konfigurovatelných pravidel. Spusťte Prettier, a všechny tabulátory budou převedeny na mezery s odsazením, uvozovky a další budou vyhovovat přednastavení. V ideálním případě se Prettier spustí při uložení souboru a rychle provede tyto změny za vás.
+V případě sdílení kódu s jiným vývojářem, je poslední věcí kterou chcete řešit diskuze ohledně [tabulátory vs mezery](https://www.google.com/search?q=tabs+vs+spaces)! Naštěstí, [Prettier](https://prettier.io/) zformátuje váš kód tak aby vyhovoval přednastavení, pomocí konfigurovatelných pravidel. Spusťte Prettier, a všechny tabulátory budou převedeny na mezery s odsazením, uvozovky a další budou vyhovovat přednastavení. V ideálním případě se Prettier spustí při uložení souboru a rychle provede tyto změny za vás.
 
 [Prettier pro VSCode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) si můžete nainstalovat následovně:
 
