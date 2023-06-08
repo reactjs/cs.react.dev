@@ -153,11 +153,11 @@ Co když chceme zobrazit pouze `Profile` namísto galerie? Komponentu `Profile` 
 
 <Note>
 
-To reduce the potential confusion between default and named exports, some teams choose to only stick to one style (default or named), or avoid mixing them in a single file. Do what works best for you!
+Pro snížení nejasností mezi defaultními a jmennými exporty, se některé týmy rozhodly používat pouze jeden styl (defaulutní nebo jmený) nebo nemíchat tyto styly v jednom souboru. Zařiďte se podle sebe!
 
 </Note>
 
-First, **export** `Profile` from `Gallery.js` using a named export (no `default` keyword):
+Nejprve **exportujte** `Profile` z `Gallery.js` použitím jmenného exportu (bez klíčového slova `default`):
 
 ```js
 export function Profile() {
@@ -165,13 +165,13 @@ export function Profile() {
 }
 ```
 
-Then, **import** `Profile` from `Gallery.js` to `App.js` using a named import (with the curly braces):
+Poté **importujte** `Profile` z `Gallery.js` do `App.js` použitím jmenného importu (se složenými závorkami):
 
 ```js
 import { Profile } from './Gallery.js';
 ```
 
-Finally, **render** `<Profile />` from the `App` component:
+Nakonec **vyrenderujte** `<Profile />` z komponenty `App`:
 
 ```js
 export default function App() {
@@ -179,7 +179,7 @@ export default function App() {
 }
 ```
 
-Now `Gallery.js` contains two exports: a default `Gallery` export, and a named `Profile` export. `App.js` imports both of them. Try editing `<Profile />` to `<Gallery />` and back in this example:
+Nyní `Gallery.js` obsahuje dva exporty, defaultní `Gallery` a jmenný `Profile`. `App.js` importuje oba dva. Zkuste upravit `<Profile />` na `<Gallery />`  a zpět v následujícím příkladu:
 
 <Sandpack>
 
@@ -222,24 +222,24 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Now you're using a mix of default and named exports:
+Nyný používáte mix defaultních a jmenných exportů:
 
 * `Gallery.js`:
-  - Exports the `Profile` component as a **named export called `Profile`.**
-  - Exports the `Gallery` component as a **default export.**
+  - Exportuje komponentu `Profile` jako **jmenný export `Profile`.**
+  - Exportuje komponentu `Gallery` jako **defaultní export.**
 * `App.js`:
-  - Imports `Profile` as a **named import called `Profile`** from `Gallery.js`.
-  - Imports `Gallery` as a **default import** from `Gallery.js`.
-  - Exports the root `App` component as a **default export.**
+  - Importuje `Profile` jako **jmenný import `Profile`** z `Gallery.js`.
+  - Importuje `Gallery` jako **defaultní import** z `Gallery.js`.
+  - Exportuje kořenovou komponentu `App` jako **defaultní export.**
 
 <Recap>
 
-On this page you learned:
+Na této stránce jste se naučili:
 
-* What a root component file is
-* How to import and export a component
-* When and how to use default and named imports and exports
-* How to export multiple components from the same file
+* Co je to soubor s kořenovou komponentou
+* Jak importovat a exportovat komponentu
+* Kdy a jak použít defaultní a jmenný import a export
+* Jak exportovat vícero komponent z jednoho souboru
 
 </Recap>
 
