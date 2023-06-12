@@ -4,15 +4,15 @@ title: Importování a exportování komponent
 
 <Intro>
 
-Krása komponent tkví v jejich znovupoužitelnosti: můžete vytvořit komponentu, která bude složena z dalších komponent. Občas dává smysl, že jakmile začnete přidávat více a více kompoentnt, je dobré je rozdělit do dalších souborů. Toto vede ke snažšímu čtení souborů a větší znovupoužitelnosti samostatných komponent.
+Krása komponent spočívá v jejich znovupoužitelnosti, můžete vytvořit komponentu, která je složená z dalších komponent. Občas dává smysl, že jakmile začnete přidávat více a více komponent, je dobré je rozdělit do více souborů. Toto vede ke snazšímu čtení kódu a větší znovupoužitelnosti jednotlivých komponent.
 
 </Intro>
 
 <YouWillLearn>
 
-* Co je kořenová komponenta
+* Co je to kořenová komponenta
 * Jak importovat a exportovat komponenty
-* Kdy použít výchozí a kdy jmený import a export
+* Kdy použít výchozí a kdy jmenný import a export
 * Jak importovat a exportovat vícero komponent z jednoho souboru
 * Jak rozdělit komponenty do dalších souborů
 
@@ -20,7 +20,7 @@ Krása komponent tkví v jejich znovupoužitelnosti: můžete vytvořit komponen
 
 ## Kořenová komponenta {/*the-root-component-file*/}
 
-V kapitole [Vaše první komponenta](/learn/your-first-component), byla vytvořena komponenta `Profile` a komponenta `Gallery` ji rendruje:
+V kapitole [Vaše první komponenta](/learn/your-first-component), byly vytvořeny komponenty `Profile` a `Gallery`, která ji rendruje:
 
 <Sandpack>
 
@@ -52,17 +52,17 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-V tomto příkladě jsou komponenty v ***kořenovém souboru*** jménem `App.js`. V [Create React App](https://create-react-app.dev/), je aplikace umístěna do `src/App.js`.V závislosti na projektu může být kořenová kompoenenta v úplně jiném souboru. Pokud používáte framework s navigací založenou na souborovém systému jako je třeba Next.js, bude vaše kořenová komponenta jiná pro každou stránku.
+V tomto příkladě jsou komponenty v ***kořenovém souboru*** jménem `App.js`. V [Create React App](https://create-react-app.dev/), je aplikace umístěna do `src/App.js`. V závislosti na projektu může být kořenová komponenta v úplně jiném souboru. Pokud používáte framework s navigací založenou na souborovém systému, jako je třeba Next.js, bude vaše kořenová komponenta jiná pro každou stránku.
 
 ## Export a import komponent {/*exporting-and-importing-a-component*/}
 
-Představte si, že chcete na úvodní stránce zobrazit seznam učebnic? Nebo vložit seznam profilů někam jinam? Dává smysl přesunout `Gallery` a `Profile` mimo kořenový soubor. Tyto kompoenty tak budou více modulární a znovupoužitelné i v dalších souborech. Komponenty můžete přesouvat pomocí těchto tří kroků:
+Představte si, že chcete na úvodní stránce zobrazit seznam učebnic. Nebo vložit seznam profilů někam jinam. Teď dává smysl přesunout `Gallery` a `Profile` mimo kořenový soubor. Tyto komponenty tak budou více modulární a znovupoužitelné i v dalších souborech. Komponenty můžete přesouvat pomocí těchto tří kroků:
 
 1. **Vytvořte** nový JS soubor pro komponenty.
 2. **Exportujte** vaši funkcionální komponentu z tohoto souboru (použitím buď [defaultního](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_the_default_export) nabo [jmeného](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/export#using_named_exports) exportu).
 3. **Importujte** ji do souboru, kde se chystáte tuto komponentu použít (použitím korespondující techniky pro import [defaultní](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#importing_defaults) nebo [jmenný](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import#import_a_single_export_from_a_module) import).
 
-Zde obě komponenty `Profile` a `Gallery` byly přesunuty mimo soubor `App.js` do nového souboru `Gallery.js`. Nyný můžete upravit `App.js` aby importoval `Gallery` z `Gallery.js`:
+Obě komponenty, `Profile` a `Gallery`, byly přesunuty mimo soubor `App.js` do nového souboru `Gallery.js`. Nyní můžete upravit `App.js` aby importoval `Gallery` z `Gallery.js`:
 
 <Sandpack>
 
@@ -104,7 +104,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Všimněte si jak je tento příklad rozdělen do dvou souborů:
+Všimněte si, jak je tento příklad rozdělen do dvou souborů:
 
 1. `Gallery.js`:
      - Definuje `Profile` komponentu, která je použita pouze uvnitř tohoto souboru a není exportována.
@@ -116,21 +116,21 @@ Všimněte si jak je tento příklad rozdělen do dvou souborů:
 
 <Note>
 
-Můžete si povšimnout, že soubory postrádají koncovku `.js` například tady:
+Můžete si povšimnout, že soubory postrádají příponu `.js` například tady:
 
 ```js
 import Gallery from './Gallery';
 ```
 
-Obě `'./Gallery.js'` nebo `'./Gallery'` boudou fungovat s Reactem, ikdyž první je blíže tomu jak [nativní ES Moduly](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules) fungují.
+Obě `'./Gallery.js'` nebo `'./Gallery'` budou fungovat s Reactem, přestože první je blíže tomu, jak [nativní ES Moduly](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Modules) fungují.
 
 </Note>
 
 <DeepDive>
 
-#### Defaultní vs jmenné exporty {/*default-vs-named-exports*/}
+#### Defaultní vs. jmenné exporty {/*default-vs-named-exports*/}
 
-Máme dva hlavní způsoby, jak exportovat hodnoty v JavaScriptu, defaultní a jmenný export. Pro zatím jsme v našich příkladech používali pouze defaultní exporty. Můžete použít jeden nebo oba způsoby ve stejném souboru. **Soubor může mít pouze jeden _defaultní_ export, ale může mít několik _jmenných_ exportů.**
+Máme dva hlavní způsoby jak exportovat hodnoty v JavaScriptu, defaultní a jmenný export. Prozatím jsme v našich příkladech používali pouze defaultní exporty. V jednom souboru můžeme použít jeden nebo oba způsoby. **Soubor může mít pouze jeden _defaultní_ export, ale může mít několik _jmenných_ exportů.**
 
 ![Defaultní a jmenné exporty](/images/docs/illustrations/i_import-export.svg)
 
@@ -141,19 +141,19 @@ Druh exportu komponenty určuje jak ji musíte naimportovat. V případě, že s
 | Defalutní  | `export default function Button() {}` | `import Button from './Button.js';`     |
 | Jmenný    | `export function Button() {}`         | `import { Button } from './Button.js';` |
 
-S _defaultním_ importem můžete za `import` vložit jakékoliv jméno. Na příklad můžete napsat `import Banana from './Button.js'` a stále dostane defaulutní export. Na rozdíl, v případě jmenných importů, musí jméno odpovídat na obou stranách. Proto se jim říká _jmenné_ importy!
+S _defaultním_ importem můžete za klíčové slovo `import` vložit jakékoliv jméno. Například můžete napsat `import Banana from './Button.js'` a stále dostane defaulutní export. Na rozdíl od jmenných importů, kde musí jméno odpovídat na obou stranách. Proto se jim říká _jmenné_ importy!
 
-**Defaultní export se většinou používá pokud soubor exportuje pouze jednu komponentu. Naopak jmenný export se většinou používá tam kde se exportuje více komponent nebo hodnot z jednoho souboru.** Nehledě jaký programaátorský styl preferujete, dávejte komponentám a souborům které je obsahují smysluplné názvy. Komponenty bez jmen, například `export default () => {}`, jsou nežádoucí protože je těžší je deubgovat.
+**Defaultní export se většinou používá pokud soubor exportuje pouze jednu komponentu. Naopak jmenný export se používá tam, kde se exportuje více komponent nebo hodnot z jednoho souboru.** Nehledě jaký programátorský styl preferujete, dávejte komponentám a souborům které je obsahují smysluplné názvy. Bezejmenná komponenta, například `export default () => {}`, je nežádoucí protože je těžké ji deubgovat.
 
 </DeepDive>
 
 ## Exportování a importování vícero komponent ze stejného souboru {/*exporting-and-importing-multiple-components-from-the-same-file*/}
 
-Co když chceme zobrazit pouze `Profile` namísto galerie? Komponentu `Profile` můžete vyexportovat také. Ale soubor `Gallery.js` již má *defaultní* export a nemůže mít _two_ defaultní exporty. Můžete vytvořit nový soubor s defaultním exportem, nebo můžete přidat jmenný export pro komponentu `Profile`. **Soubor může mít pouze jeden defaultní export, ale může mít vícero jmenných exportů!**
+Co když chceme zobrazit pouze `Profile` namísto galerie? Komponentu `Profile` lze také vyexportovat. Pozor, soubor `Gallery.js` již má *defaultní* export a nemůže mít _dva_ defaultní exporty. Můžete vytvořit nový soubor s defaultním exportem, nebo můžete přidat jmenný export pro komponentu `Profile`. **Soubor může mít pouze jeden defaultní export, ale může mít vícero jmenných exportů!**
 
 <Note>
 
-Pro snížení nejasností mezi defaultními a jmennými exporty, se některé týmy rozhodly používat pouze jeden styl (defaulutní nebo jmený) nebo nemíchat tyto styly v jednom souboru. Zařiďte se podle sebe!
+Pro zjednodušení, se některé týmy rozhodly používat pouze jeden styl (defaulutní nebo jmený) nebo nemíchat tyto styly v jednom souboru. Zařiďte se podle sebe!
 
 </Note>
 
@@ -171,7 +171,7 @@ Poté **importujte** `Profile` z `Gallery.js` do `App.js` použitím jmenného i
 import { Profile } from './Gallery.js';
 ```
 
-Nakonec **vyrenderujte** `<Profile />` z komponenty `App`:
+Nakonec **vyrenderujte** `<Profile />` v komponentě `App`:
 
 ```js
 export default function App() {
@@ -179,7 +179,7 @@ export default function App() {
 }
 ```
 
-Nyní `Gallery.js` obsahuje dva exporty, defaultní `Gallery` a jmenný `Profile`. `App.js` importuje oba dva. Zkuste upravit `<Profile />` na `<Gallery />`  a zpět v následujícím příkladu:
+Nyní, `Gallery.js` obsahuje dva exporty, defaultní `Gallery` a jmenný `Profile`. `App.js` importuje oba dva. Zkuste upravit `<Profile />` na `<Gallery />`  a zpět v následujícím příkladu:
 
 <Sandpack>
 
@@ -222,7 +222,7 @@ img { margin: 0 10px 10px 0; height: 90px; }
 
 </Sandpack>
 
-Nyný používáte mix defaultních a jmenných exportů:
+Nyní používáte mix defaultních a jmenných exportů:
 
 * `Gallery.js`:
   - Exportuje komponentu `Profile` jako **jmenný export `Profile`.**
@@ -247,13 +247,13 @@ Na této stránce jste se naučili:
 
 <Challenges>
 
-#### Další rozdělení kopmponent {/*split-the-components-further*/}
+#### Další rozdělení komponent {/*split-the-components-further*/}
 
-Aktuálně, `Gallery.js` exportuje obě komponenty `Profile` a `Gallery`, což je trochu matoucí.
+Nyní, `Gallery.js` exportuje obě komponenty `Profile` a `Gallery` což je trochu matoucí.
 
-Přesuňte komponentu `Profile` vlastního souboru `Profile.js` a změňte komponentu `App`, aby rendrovala obě komponenty `<Profile />` a `<Gallery />` v tomto pořadí.
+Přesuňte komponentu `Profile` do vlastního souboru `Profile.js` a změňte komponentu `App` tak, aby rendrovala obě komponenty `<Profile />` a `<Gallery />` v tomto pořadí.
 
-Můžete použít buďto defaultní nebo jmenný export pro `Profile`, ale ujistěte se, že použijete korespondující syntaxy pro import v obou soborech `App.js` a `Gallery.js`! Můžete se podívat na tabulku z rozboru výše:
+Můžete použít buďto defaultní nebo jmenný export pro `Profile`, ale ujistěte se, že použijete korespondující syntaxi pro import v obou souborech `App.js` a `Gallery.js`! Můžete se podívat na tabulku z rozboru výše:
 
 | Syntaxe           | Výraz pro export                           | Výraz pro import                          |
 | -----------      | -----------                                | -----------                               |
