@@ -1,25 +1,25 @@
 ---
-title: JavaScript in JSX with Curly Braces
+title: JavaScript v JSX se složenými závorkami
 ---
 
 <Intro>
 
-JSX lets you write HTML-like markup inside a JavaScript file, keeping rendering logic and content in the same place. Sometimes you will want to add a little JavaScript logic or reference a dynamic property inside that markup. In this situation, you can use curly braces in your JSX to open a window to JavaScript.
+JSX vám umožňuje psát strukturu podobnou jako je HTML přímo uvnitř JavaScriptového souboru. Díky tomu je rendrovací logika a obsah na jednom místě. Může se stát, že budete potřebovat přidat JavaScriptovou logiku nebo odkázat na nějakou proměnnou uvnitř struktury. V tom případě, můžete využít složené závorky v JSX a dát tak prostor pro JavaScript.
 
 </Intro>
 
 <YouWillLearn>
 
-* How to pass strings with quotes
+* Jak předat řetězec pomocí uvozovek
 * How to reference a JavaScript variable inside JSX with curly braces
-* How to call a JavaScript function inside JSX with curly braces
-* How to use a JavaScript object inside JSX with curly braces
+* Jak zavolat JavaScriptovou funkci uvnitř JSX pomocí složených závorek
+* Jak použít JavaScriptový objekt uvnitř JSX pomocí složených závorek
 
 </YouWillLearn>
 
-## Passing strings with quotes {/*passing-strings-with-quotes*/}
+## Předávání stringů pomocí uvozovek {/*passing-strings-with-quotes*/}
 
-When you want to pass a string attribute to JSX, you put it in single or double quotes:
+Když chcete předat řetězec jako argument v JSX, stačí jej dát do jednoduchých nebo dvojitých uvozovek:
 
 <Sandpack>
 
@@ -41,9 +41,9 @@ export default function Avatar() {
 
 </Sandpack>
 
-Here, `"https://i.imgur.com/7vQD0fPs.jpg"` and `"Gregorio Y. Zara"` are being passed as strings.
+Zde byly `"https://i.imgur.com/7vQD0fPs.jpg"` a `"Gregorio Y. Zara"` předány jako řetězce.
 
-But what if you want to dynamically specify the `src` or `alt` text? You could **use a value from JavaScript by replacing `"` and `"` with `{` and `}`**:
+Co když chceze dynamicky měnit `src` nebo `alt`? Můžete **použít hodnotu z JavaScriptu zaměněním `"` a `"` za `{` a `}`**:
 
 <Sandpack>
 
@@ -67,11 +67,11 @@ export default function Avatar() {
 
 </Sandpack>
 
-Notice the difference between `className="avatar"`, which specifies an `"avatar"` CSS class name that makes the image round, and `src={avatar}` that reads the value of the JavaScript variable called `avatar`. That's because curly braces let you work with JavaScript right there in your markup!
+Povšimnněte si toho rozdílu mezi `className="avatar"`, který specifikuje `"avatar"` CSS třídu, která dělá kulatý obrázek, a `src={avatar}` která řze hodnotu z JavaScriptové proměnné zvané `avatar`. To se děje díky tomu, že složené závorky dovolují pracovat s JavaScriptem přímo ve struktuře!
 
-## Using curly braces: A window into the JavaScript world {/*using-curly-braces-a-window-into-the-javascript-world*/}
+## Používání složených závorek: Okno do světa JavaScriptu {/*using-curly-braces-a-window-into-the-javascript-world*/}
 
-JSX is a special way of writing JavaScript. That means it’s possible to use JavaScript inside it—with curly braces `{ }`. The example below first declares a name for the scientist, `name`, then embeds it with curly braces inside the `<h1>`:
+JSX je speciální způsob jak psát JavaScript. To znamneá, že je možné použít JavaScript uvnitř složených závorek `{ }`. V příkladu níže nejprve dekladujeme promenou pro jméno vědce, `name` a poté vlotžíme tuto proměnou uvnitř složených záorek do `<h1>`:
 
 <Sandpack>
 
@@ -86,9 +86,9 @@ export default function TodoList() {
 
 </Sandpack>
 
-Try changing the `name`'s value from `'Gregorio Y. Zara'` to `'Hedy Lamarr'`. See how the list title changes?
+ZKuste změnit hodnotu `name` z `'Gregorio Y. Zara'` na `'Hedy Lamarr'`. Všimli jste si jak se nadpis seznamu zmněnil?
 
-Any JavaScript expression will work between curly braces, including function calls like `formatDate()`:
+Jakákoliv JavaScriptová syntaxe bude fungovat ve složených závorkách, to zahrnuje i volání funkcí jako `formatDate()`:
 
 <Sandpack>
 
