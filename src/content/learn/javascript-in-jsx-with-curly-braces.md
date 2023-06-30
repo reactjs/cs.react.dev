@@ -111,14 +111,14 @@ export default function TodoList() {
 
 </Sandpack>
 
-### Where to use curly braces {/*where-to-use-curly-braces*/}
+### Kde použít složené závorky {/*where-to-use-curly-braces*/}
 
-You can only use curly braces in two ways inside JSX:
+Jsou dva způsoby, jak použít složené závorky v JSX:
 
-1. **As text** directly inside a JSX tag: `<h1>{name}'s To Do List</h1>` works, but `<{tag}>Gregorio Y. Zara's To Do List</{tag}>`  will not.
-2. **As attributes** immediately following the `=` sign: `src={avatar}` will read the `avatar` variable, but `src="{avatar}"` will pass the string `"{avatar}"`.
+1. **Jako text** přímo v JSX tagu: `<h1>{name}'s To Do List</h1>` funguje, ale `<{tag}>Gregorio Y. Zara's To Do List</{tag}>`  nebude fungovat.
+2. **Jako atribut** ihned po `=` znaku: `src={avatar}` přečte `avatar` proměnnou, ale `src="{avatar}"` bude předáno jako řetězec `"{avatar}"`.
 
-## Using "double curlies": CSS and other objects in JSX {/*using-double-curlies-css-and-other-objects-in-jsx*/}
+## Používání "dvojitých složených závorek": CSS a ostatní objekty v JSX {/*using-double-curlies-css-and-other-objects-in-jsx*/}
 
 In addition to strings, numbers, and other JavaScript expressions, you can even pass objects in JSX. Objects are also denoted with curly braces, like `{ name: "Hedy Lamarr", inventions: 5 }`. Therefore, to pass a JS object in JSX, you must wrap the object in another pair of curly braces: `person={{ name: "Hedy Lamarr", inventions: 5 }}`.
 
