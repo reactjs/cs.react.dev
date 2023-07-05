@@ -120,9 +120,9 @@ Jsou dva způsoby, jak použít složené závorky v JSX:
 
 ## Používání "dvojitých složených závorek": CSS a ostatní objekty v JSX {/*using-double-curlies-css-and-other-objects-in-jsx*/}
 
-In addition to strings, numbers, and other JavaScript expressions, you can even pass objects in JSX. Objects are also denoted with curly braces, like `{ name: "Hedy Lamarr", inventions: 5 }`. Therefore, to pass a JS object in JSX, you must wrap the object in another pair of curly braces: `person={{ name: "Hedy Lamarr", inventions: 5 }}`.
+Krome řetězců, čísel a dalších JavaScriptových výrazů, můžete v JSX předávat i objekty. Objekty jsou také označené složenými závorkami, například `{ name: "Hedy Lamarr", inventions: 5 }`. Proto v JSX je třeba obalit objekt dalším párem složených závorek: `person={{ name: "Hedy Lamarr", inventions: 5 }}`.
 
-You may see this with inline CSS styles in JSX. React does not require you to use inline styles (CSS classes work great for most cases). But when you need an inline style, you pass an object to the `style` attribute:
+Můžete se s tím setkat v případě inline CSS stylů v JSX. React nevyžaduje použití inline stylů (CSS třídy fungují pro většinu případů dobře). V případě, že potřebujete inline styl, je třeba předat objekt `style` atributu:
 
 <Sandpack>
 
@@ -148,9 +148,9 @@ ul { padding: 20px 20px 20px 40px; margin: 0; }
 
 </Sandpack>
 
-Try changing the values of `backgroundColor` and `color`.
+Zkuste změnit hodnoty `backgroundColor` a `color`.
 
-You can really see the JavaScript object inside the curly braces when you write it like this:
+Můžete vidět JavaScriptový objekt uvnitř složených závorek v případě, že to napíšete takto:
 
 ```js {2-5}
 <ul style={
@@ -161,17 +161,17 @@ You can really see the JavaScript object inside the curly braces when you write 
 }>
 ```
 
-The next time you see `{{` and `}}` in JSX, know that it's nothing more than an object inside the JSX curlies!
+Příště, až uvidíte `{{` a `}}` v JSX budete vědět, že je jen objekt uvnitř JSX!
 
 <Pitfall>
 
-Inline `style` properties are written in camelCase. For example, HTML `<ul style="background-color: black">` would be written as `<ul style={{ backgroundColor: 'black' }}>`  in your component.
+Inline `style` atributy se píší jako camelCase. Například, HTML `<ul style="background-color: black">` bude zapsáno jako `<ul style={{ backgroundColor: 'black' }}>`  ve vaší komponentě.
 
 </Pitfall>
 
-## More fun with JavaScript objects and curly braces {/*more-fun-with-javascript-objects-and-curly-braces*/}
+## Více zábavy s objekty v JavaScriptu a složenými závorkami {/*more-fun-with-javascript-objects-and-curly-braces*/}
 
-You can move several expressions into one object, and reference them in your JSX inside curly braces:
+Můžete přesunout několik výrazů do jednoho objektu a odkázat na něj v JSX uvnitř složených závorek:
 
 <Sandpack>
 
@@ -211,7 +211,7 @@ body > div > div { padding: 20px; }
 
 </Sandpack>
 
-In this example, the `person` JavaScript object contains a `name` string and a `theme` object:
+V tomto příkladě je `person` JavaScriptový objekt obsahující řetězec `name` a `theme` objekt:
 
 ```js
 const person = {
@@ -223,23 +223,23 @@ const person = {
 };
 ```
 
-The component can use these values from `person` like so:
+Komponenta může použít hodnoty z objektu `person` následovně:
 
 ```js
 <div style={person.theme}>
   <h1>{person.name}'s Todos</h1>
 ```
 
-JSX is very minimal as a templating language because it lets you organize data and logic using JavaScript.
+JSX není jen šablonovací jazyk, protože umožňuje kombinovat data a logiku s použitím JavaScriptu.
 
 <Recap>
 
-Now you know almost everything about JSX:
+Nyní víte skoro všechno o JSX:
 
-* JSX attributes inside quotes are passed as strings.
-* Curly braces let you bring JavaScript logic and variables into your markup.
-* They work inside the JSX tag content or immediately after `=` in attributes.
-* `{{` and `}}` is not special syntax: it's a JavaScript object tucked inside JSX curly braces.
+* JSX atributy uvnitř uvozovek jsou předány jako řetězce.
+* Složené závorky umožňují použít JavaScriptovou logiku a proměnné uvnitř struktury.
+* Fungují v JSX nebo ihned za `=` v atributech.
+* `{{` a `}}` není speciální syntaxe, je to pouze objekt obalený složenými závorkami z JSX.
 
 </Recap>
 
