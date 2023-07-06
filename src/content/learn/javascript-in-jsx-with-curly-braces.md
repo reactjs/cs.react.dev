@@ -245,9 +245,9 @@ Nyní víte skoro všechno o JSX:
 
 <Challenges>
 
-#### Fix the mistake {/*fix-the-mistake*/}
+#### Oprava chyby {/*fix-the-mistake*/}
 
-This code crashes with an error saying `Objects are not valid as a React child`:
+Následující kód skončí touto chybovou hláškou: `Objects are not valid as a React child`:
 
 <Sandpack>
 
@@ -287,15 +287,15 @@ body > div > div { padding: 20px; }
 
 </Sandpack>
 
-Can you find the problem?
+Dokážete najít problém?
 
-<Hint>Look for what's inside the curly braces. Are we putting the right thing there?</Hint>
+<Hint>Zkuste se podívat, co je ve složených závorkách. Předáváme tam správný typ?</Hint>
 
 <Solution>
 
-This is happening because this example renders *an object itself* into the markup rather than a string: `<h1>{person}'s Todos</h1>` is trying to render the entire `person` object! Including raw objects as text content throws an error because React doesn't know how you want to display them.
+Chyby nastala protože v tomto příkladu rendrujeme *samotný objekt* přímo namísto řetězce. `<h1>{person}'s Todos</h1>` se pokouší vyrendrovat celý objekt `person`! Rendrování objektů jako text vyhodí error, protože React neví jak je má zobrazit.
 
-To fix it, replace `<h1>{person}'s Todos</h1>` with `<h1>{person.name}'s Todos</h1>`:
+Pro opravu, nahraďte `<h1>{person}'s Todos</h1>` za `<h1>{person.name}'s Todos</h1>`:
 
 <Sandpack>
 
@@ -337,9 +337,9 @@ body > div > div { padding: 20px; }
 
 </Solution>
 
-#### Extract information into an object {/*extract-information-into-an-object*/}
+#### Extrakce informací do objektu {/*extract-information-into-an-object*/}
 
-Extract the image URL into the `person` object.
+Extrakce URL obrázku do objektu `person`.
 
 <Sandpack>
 
@@ -381,7 +381,7 @@ body > div > div { padding: 20px; }
 
 <Solution>
 
-Move the image URL into a property called `person.imageUrl` and read it from the `<img>` tag using the curlies:
+Přesuňte URL obrázku do parametru `person.imageUrl` a přečtěte ji z `<img>` tagu použitím složených závorek:
 
 <Sandpack>
 
