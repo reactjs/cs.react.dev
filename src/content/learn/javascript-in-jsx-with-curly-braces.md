@@ -424,13 +424,13 @@ body > div > div { padding: 20px; }
 
 </Solution>
 
-#### Write an expression inside JSX curly braces {/*write-an-expression-inside-jsx-curly-braces*/}
+#### Psaní výrazu ve JSX pomocí složených závorek {/*write-an-expression-inside-jsx-curly-braces*/}
 
-In the object below, the full image URL is split into four parts: base URL, `imageId`, `imageSize`, and file extension.
+V objektu níže je URL obrázku rozdělena na čtyři části: URL, `imageId`, `imageSize` a přípona.
 
-We want the image URL to combine these attributes together: base URL (always `'https://i.imgur.com/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`), and file extension (always `'.jpg'`). However, something is wrong with how the `<img>` tag specifies its `src`.
+Chceme aby URL obrázku kombinovala tyto atributy: URL (stále `'https://i.imgur.com/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`) a příponu souboru (pořád `'.jpg'`). Nicméně, něco je špatně s tím jak `<img>` tag specifikuje svůj atribut `src`.
 
-Can you fix it?
+Dokážete to spravit?
 
 <Sandpack>
 
@@ -474,15 +474,15 @@ body > div > div { padding: 20px; }
 
 </Sandpack>
 
-To check that your fix worked, try changing the value of `imageSize` to `'b'`. The image should resize after your edit.
+Pro kontrolu, jestli vaše oprava funguje, zkuste měnit hodnotu `imageSize` na `'b'`. Obrázek by měl změnit velikost.
 
 <Solution>
 
-You can write it as `src={baseUrl + person.imageId + person.imageSize + '.jpg'}`.
+Můžete to napsat jako `src={baseUrl + person.imageId + person.imageSize + '.jpg'}`.
 
-1. `{` opens the JavaScript expression
-2. `baseUrl + person.imageId + person.imageSize + '.jpg'` produces the correct URL string
-3. `}` closes the JavaScript expression
+1. `{` začíná JavaScriptový výraz
+2. `baseUrl + person.imageId + person.imageSize + '.jpg'` produkuje správnou URL
+3. `}` ukončuje JavaScriptový výraz
 
 <Sandpack>
 
@@ -525,7 +525,7 @@ body > div > div { padding: 20px; }
 
 </Sandpack>
 
-You can also move this expression into a separate function like `getImageUrl` below:
+Také můžete tento výraz přesunout do separátní funkce `getImageUrl` níže:
 
 <Sandpack>
 
@@ -580,7 +580,7 @@ body > div > div { padding: 20px; }
 
 </Sandpack>
 
-Variables and functions can help you keep the markup simple!
+Proměnné a funkce vám pomůžou udržet jednoduchou strukturu!
 
 </Solution>
 
