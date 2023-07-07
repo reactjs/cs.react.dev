@@ -173,7 +173,7 @@ function YouWillLearn({
   children: any;
   isChapter?: boolean;
 }) {
-  let title = isChapter ? 'In this chapter' : 'You will learn';
+  let title = isChapter ? 'V této kapitole' : 'Naučíte se';
   return <SimpleCallout title={title}>{children}</SimpleCallout>;
 }
 
