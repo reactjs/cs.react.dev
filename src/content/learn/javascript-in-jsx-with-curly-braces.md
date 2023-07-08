@@ -4,20 +4,20 @@ title: JavaScript v JSX se složenými závorkami
 
 <Intro>
 
-JSX vám umožňuje psát strukturu podobnou jako je HTML přímo uvnitř JavaScriptového souboru. Díky tomu je rendrovací logika a obsah na jednom místě. Může se stát, že budete potřebovat přidat JavaScriptovou logiku nebo odkázat na nějakou proměnnou uvnitř struktury. V tom případě, můžete využít složené závorky v JSX a dát tak prostor pro JavaScript.
+JSX vám umožňuje psát strukturu podobnou jako je HTML přímo uvnitř JavaScriptového souboru. Díky tomu je logika a obsah na jednom místě. Může se stát, že budete potřebovat přidat JavaScriptovou logiku nebo odkázat na nějakou proměnnou uvnitř struktury. V tom případě, můžete využít složené závorky v JSX a dát tak prostor pro JavaScript.
 
 </Intro>
 
 <YouWillLearn>
 
 * Jak předat řetězec pomocí uvozovek
-* How to reference a JavaScript variable inside JSX with curly braces
+* Jak odkázat na JavaScriptovou proměnnou uvnitř JSX pomocí složených závorek
 * Jak zavolat JavaScriptovou funkci uvnitř JSX pomocí složených závorek
 * Jak použít JavaScriptový objekt uvnitř JSX pomocí složených závorek
 
 </YouWillLearn>
 
-## Předávání stringů pomocí uvozovek {/*passing-strings-with-quotes*/}
+## Předávání řetězců pomocí uvozovek {/*passing-strings-with-quotes*/}
 
 Když chcete předat řetězec jako argument v JSX, stačí jej dát do jednoduchých nebo dvojitých uvozovek:
 
@@ -41,9 +41,9 @@ export default function Avatar() {
 
 </Sandpack>
 
-Zde byly `"https://i.imgur.com/7vQD0fPs.jpg"` a `"Gregorio Y. Zara"` předány jako řetězce.
+Zde jsou `"https://i.imgur.com/7vQD0fPs.jpg"` a `"Gregorio Y. Zara"` předávány jako řetězce.
 
-Co když chceze dynamicky měnit `src` nebo `alt`? Můžete **použít hodnotu z JavaScriptu zaměněním `"` a `"` za `{` a `}`**:
+Co když chcete dynamicky měnit `src` nebo `alt`? Můžete **použít hodnotu z JavaScriptu zaměněním `"` a `"` za `{` a `}`**:
 
 <Sandpack>
 
@@ -67,11 +67,11 @@ export default function Avatar() {
 
 </Sandpack>
 
-Povšimnněte si toho rozdílu mezi `className="avatar"`, který specifikuje `"avatar"` CSS třídu, která dělá kulatý obrázek, a `src={avatar}` která řze hodnotu z JavaScriptové proměnné zvané `avatar`. To se děje díky tomu, že složené závorky dovolují pracovat s JavaScriptem přímo ve struktuře!
+Všimněte si rozdílu mezi `className="avatar"`, který specifikuje `"avatar"` CSS třídu, která dělá kulatý obrázek a `src={avatar}` která načítá hodnotu z JavaScriptové proměnné `avatar`. To se děje díky tomu, že složené závorky dovolují pracovat s JavaScriptem přímo ve struktuře!
 
 ## Používání složených závorek: Okno do světa JavaScriptu {/*using-curly-braces-a-window-into-the-javascript-world*/}
 
-JSX je speciální způsob jak psát JavaScript. To znamneá, že je možné použít JavaScript uvnitř složených závorek `{ }`. V příkladu níže nejprve dekladujeme promenou pro jméno vědce, `name` a poté vlotžíme tuto proměnou uvnitř složených záorek do `<h1>`:
+JSX je speciální způsob jak psát JavaScript. To znamená, že je možné použít JavaScript uvnitř složených závorek `{ }`. V příkladu níže nejprve deklarujeme promenou pro jméno vědce `name` a poté vložíme tuto proměnou uvnitř složených závorek do `<h1>`:
 
 <Sandpack>
 
@@ -86,9 +86,9 @@ export default function TodoList() {
 
 </Sandpack>
 
-ZKuste změnit hodnotu `name` z `'Gregorio Y. Zara'` na `'Hedy Lamarr'`. Všimli jste si jak se nadpis seznamu zmněnil?
+Zkuste změnit hodnotu `name` z `'Gregorio Y. Zara'` na `'Hedy Lamarr'`. Všimli jste si jak se nadpis seznamu změnil?
 
-Jakákoliv JavaScriptová syntaxe bude fungovat ve složených závorkách, to zahrnuje i volání funkcí jako `formatDate()`:
+Jakákoliv JavaScriptová syntaxe bude fungovat ve složených závorkách, to zahrnuje i volání funkcí jako je `formatDate()`:
 
 <Sandpack>
 
@@ -115,12 +115,12 @@ export default function TodoList() {
 
 Jsou dva způsoby, jak použít složené závorky v JSX:
 
-1. **Jako text** přímo v JSX tagu: `<h1>{name}'s To Do List</h1>` funguje, ale `<{tag}>Gregorio Y. Zara's To Do List</{tag}>`  nebude fungovat.
+1. **Jako text** přímo v JSX tagu: `<h1>{name}'s To Do List</h1>` funguje, ale `<{tag}>Gregorio Y. Zara's To Do List</{tag}>` nebude fungovat.
 2. **Jako atribut** ihned po `=` znaku: `src={avatar}` přečte `avatar` proměnnou, ale `src="{avatar}"` bude předáno jako řetězec `"{avatar}"`.
 
 ## Používání "dvojitých složených závorek": CSS a ostatní objekty v JSX {/*using-double-curlies-css-and-other-objects-in-jsx*/}
 
-Krome řetězců, čísel a dalších JavaScriptových výrazů, můžete v JSX předávat i objekty. Objekty jsou také označené složenými závorkami, například `{ name: "Hedy Lamarr", inventions: 5 }`. Proto v JSX je třeba obalit objekt dalším párem složených závorek: `person={{ name: "Hedy Lamarr", inventions: 5 }}`.
+Krome řetězců, čísel a dalších JavaScriptových výrazů, můžete v JSX předávat i objekty. Objekty jsou také označené složenými závorkami, například `{ name: "Hedy Lamarr", inventions: 5 }`. Proto je v JSX třeba obalit objekt dalším párem složených závorek: `person={{ name: "Hedy Lamarr", inventions: 5 }}`.
 
 Můžete se s tím setkat v případě inline CSS stylů v JSX. React nevyžaduje použití inline stylů (CSS třídy fungují pro většinu případů dobře). V případě, že potřebujete inline styl, je třeba předat objekt `style` atributu:
 
@@ -239,7 +239,7 @@ Nyní víte skoro všechno o JSX:
 * JSX atributy uvnitř uvozovek jsou předány jako řetězce.
 * Složené závorky umožňují použít JavaScriptovou logiku a proměnné uvnitř struktury.
 * Fungují v JSX nebo ihned za `=` v atributech.
-* `{{` a `}}` není speciální syntaxe, je to pouze objekt obalený složenými závorkami z JSX.
+* `{{` a `}}` není speciální syntaxe, ale pouze objekt obalený složenými závorkami z JSX.
 
 </Recap>
 
@@ -426,9 +426,9 @@ body > div > div { padding: 20px; }
 
 #### Psaní výrazu ve JSX pomocí složených závorek {/*write-an-expression-inside-jsx-curly-braces*/}
 
-V objektu níže je URL obrázku rozdělena na čtyři části: URL, `imageId`, `imageSize` a přípona.
+V objektu níže je URL obrázku rozdělena na čtyři části: host, `imageId`, `imageSize` a přípona.
 
-Chceme aby URL obrázku kombinovala tyto atributy: URL (stále `'https://i.imgur.com/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`) a příponu souboru (pořád `'.jpg'`). Nicméně, něco je špatně s tím jak `<img>` tag specifikuje svůj atribut `src`.
+Chceme aby URL obrázku kombinovala tyto atributy: host (stále `'https://i.imgur.com/'`), `imageId` (`'7vQD0fP'`), `imageSize` (`'s'`) a příponu souboru (pořád `'.jpg'`). Nicméně, něco je špatně s tím jak `<img>` tag specifikuje svůj atribut `src`.
 
 Dokážete to spravit?
 
