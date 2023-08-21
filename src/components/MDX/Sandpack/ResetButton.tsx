@@ -16,10 +16,14 @@ export function ResetButton({onReset}: ResetButtonProps) {
       title="Obnovit Sandbox"
       type="button">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <IconRestart className="inline ml-1 mr-1 relative" /> Obnovit
 =======
       <IconRestart className="inline ms-1 me-1 relative" /> Reset
 >>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
+=======
+      <IconRestart className="inline mx-1 relative" /> Reset
+>>>>>>> 842c24c9aefaa60b7ae9b46b002bd1b3cf4d31f3
     </button>
   );
 }
