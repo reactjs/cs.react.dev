@@ -67,7 +67,7 @@ Poté přidejte následující řádky kódu na začátek svého hlavního JavaS
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
 // Nahradí existující obsah HTML
@@ -131,7 +131,7 @@ Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElemen
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
