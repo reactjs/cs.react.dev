@@ -37,7 +37,11 @@ export default function App() {
 
 Můžete ho také otevřít v nové záložce stisknutím tlačítka "Fork" v pravém horním rohu.
 
+<<<<<<< HEAD
 Většina stránek v dokumentaci React obsahuje sandboxy jako tento. Mimo React dokumentaci jsou k dispozici mnohé online sandboxy podporující React, jako například: [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), nebo [CodePen.](https://codepen.io/pen?&editors=0010&layout=left&prefill_data_id=3f4569d1-1b11-4bce-bd46-89090eed5ddb)
+=======
+Most pages in the React documentation contain sandboxes like this. Outside of the React documentation, there are many online sandboxes that support React: for example, [CodeSandbox](https://codesandbox.io/s/new), [StackBlitz](https://stackblitz.com/fork/react), or [CodePen.](https://codepen.io/pen?template=QWYVwWN)
+>>>>>>> 84f29eb20af17e9c154b9ad71c21af4c9171e4a2
 
 ### Vyzkoušejte si React lokálně {/*try-react-locally*/}
 
