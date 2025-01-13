@@ -20,9 +20,15 @@ Představme si, že máte existující webovou aplikaci na adrese `example.com`,
 
 Zde je náš doporučený postup:
 
+<<<<<<< HEAD
 1. **Vytvořte část aplikace** pomocí některého z [frameworků založených na Reactu](/learn/start-a-new-react-project).
 2. **Nastavte `/obchod` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/obchod/` zpracovávala vaše aplikace v Reactu.
+=======
+1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
+2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+>>>>>>> 9000e6e003854846c4ce5027703b5ce6f81aad80
 
 Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/start-a-new-react-project#can-i-use-react-without-a-framework), které jsou součástí těchto frameworků.
 
