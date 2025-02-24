@@ -51,6 +51,7 @@ A dále je napojte do vaší stránky přídáním `<script>` tagu na začátek 
 Nyní obnovte stránku v prohlížeči a nástroje se vám zobrazí.
 ![React Developer Tools standalone](/images/docs/react-devtools-standalone.png)
 
+<<<<<<< HEAD
 ## Mobilní prostředí (React Native) {/*mobile-react-native*/}
 React Developer Tools lze zároveň využít i k prozkoumávání aplikací vytvořených za pomocí [React Native](https://reactnative.dev/).
 
@@ -58,11 +59,15 @@ Nejjednodušší způsob je nainstalovat tyto nástroje globálně:
 ```bash
 # Yarn
 yarn global add react-devtools
+=======
+## Mobile (React Native) {/*mobile-react-native*/}
 
-# Npm
-npm install -g react-devtools
-```
+To inspect apps built with [React Native](https://reactnative.dev/), you can use [React Native DevTools](https://reactnative.dev/docs/react-native-devtools), the built-in debugger that deeply integrates React Developer Tools. All features work identically to the browser extension, including native element highlighting and selection.
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
 
+[Learn more about debugging in React Native.](https://reactnative.dev/docs/debugging)
+
+<<<<<<< HEAD
 Poté nástroje otevřte v terminálu:
 ```bash
 react-devtools
@@ -73,3 +78,6 @@ Nástroje se nyní samy spojí s vaší React Native aplikací, která běží v
 > Zkuste obnovit aplikaci pokud se nástroje po několika sekundách nepřipojí samy.
 
 [Zjistit více o ladění React Native.](https://reactnative.dev/docs/debugging)
+=======
+> For versions of React Native earlier than 0.76, please use the standalone build of React DevTools by following the [Safari and other browsers](#safari-and-other-browsers) guide above.
+>>>>>>> fc29603434ec04621139738f4740caed89d659a7
