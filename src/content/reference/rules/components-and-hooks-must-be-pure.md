@@ -3,7 +3,7 @@ title: Components and Hooks must be pure
 ---
 
 <Intro>
-Pure functions only perform a calculation and nothing more. It makes your code easier to understand, debug, and allows React to automatically optimize your components and hooks correctly.
+Pure functions only perform a calculation and nothing more. It makes your code easier to understand, debug, and allows React to automatically optimize your components and Hooks correctly.
 </Intro>
 
 <Note>
@@ -16,9 +16,9 @@ This reference page covers advanced topics and requires familiarity with the con
 
 One of the key concepts that makes React, _React_ is _purity_. A pure component or hook is one that is:
 
-* **Idempotent** – You [always get the same result everytime](/learn/keeping-components-pure#purity-components-as-formulas) you run it with the same inputs – props, state, context for component inputs; and arguments for hook inputs.
+* **Idempotent** – You [always get the same result every time](/learn/keeping-components-pure#purity-components-as-formulas) you run it with the same inputs – props, state, context for component inputs; and arguments for hook inputs.
 * **Has no side effects in render** – Code with side effects should run [**separately from rendering**](#how-does-react-run-your-code). For example as an [event handler](/learn/responding-to-events) – where the user interacts with the UI and causes it to update; or as an [Effect](/reference/react/useEffect) – which runs after render.
-* **Does not mutate non-local values**: Components and hooks should [never modify values that aren't created locally](#mutation) in render.
+* **Does not mutate non-local values**: Components and Hooks should [never modify values that aren't created locally](#mutation) in render.
 
 When render is kept pure, React can understand how to prioritize which updates are most important for the user to see first. This is made possible because of render purity: since components don't have side effects [in render](#how-does-react-run-your-code), React can pause rendering components that aren't as important to update, and only come back to them later when it's needed.
 
@@ -28,7 +28,7 @@ Concretely, this means that rendering logic can be run multiple times in a way t
 
 React is declarative: you tell React _what_ to render, and React will figure out _how_ best to display it to your user. To do this, React has a few phases where it runs your code. You don't need to know about all of these phases to use React well. But at a high level, you should know about what code runs in _render_, and what runs outside of it.
 
-_Rendering_ refers to calculating what the next version of your UI should look like. After rendering, [Effects](/reference/react/useEffect) are _flushed_ (meaning they are run until there are no more left) and may update the calculation if the Effects have impacts on layout. React takes this new calculation and compares it to the calulation used to create the previous version of your UI, then _commits_ just the minimum changes needed to the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) (what your user actually sees) to catch it up to the latest version.
+_Rendering_ refers to calculating what the next version of your UI should look like. After rendering, [Effects](/reference/react/useEffect) are _flushed_ (meaning they are run until there are no more left) and may update the calculation if the Effects have impacts on layout. React takes this new calculation and compares it to the calculation used to create the previous version of your UI, then _commits_ just the minimum changes needed to the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) (what your user actually sees) to catch it up to the latest version.
 
 <DeepDive>
 
@@ -68,9 +68,9 @@ function Dropdown() {
 
 ---
 
-## Components and hooks must be idempotent {/*components-and-hooks-must-be-idempotent*/}
+## Components and Hooks must be idempotent {/*components-and-hooks-must-be-idempotent*/}
 
-Components must always return the same output with respect to their inputs – props, state, and context. This is known as _idempotency_. [Idempotency](https://en.wikipedia.org/wiki/Idempotence) is a term popularized in functional programming. It refers to the idea that you [always get the same result everytime](learn/keeping-components-pure) you run that piece of code with the same inputs.
+Components must always return the same output with respect to their inputs – props, state, and context. This is known as _idempotency_. [Idempotency](https://en.wikipedia.org/wiki/Idempotence) is a term popularized in functional programming. It refers to the idea that you [always get the same result every time](learn/keeping-components-pure) you run that piece of code with the same inputs.
 
 This means that _all_ code that runs [during render](#how-does-react-run-your-code) must also be idempotent in order for this rule to hold. For example, this line of code is not idempotent (and therefore, neither is the component):
 
@@ -190,11 +190,11 @@ Side effects that are directly visible to the user are not allowed in the render
 
 ```js {2}
 function ProductDetailPage({ product }) {
-  document.window.title = product.title; // 🔴 Bad: Changes the DOM
+  document.title = product.title; // 🔴 Bad: Changes the DOM
 }
 ```
 
-One way to achieve the desired result of updating `window.title` outside of render is to [synchronize the component with `window`](/learn/synchronizing-with-effects).
+One way to achieve the desired result of updating `document.title` outside of render is to [synchronize the component with `document`](/learn/synchronizing-with-effects).
 
 As long as calling a component multiple times is safe and doesn’t affect the rendering of other components, React doesn’t care if it’s 100% pure in the strict functional programming sense of the word. It is more important that [components must be idempotent](/reference/rules/components-and-hooks-must-be-pure).
 
@@ -207,9 +207,9 @@ A component's props and state are immutable [snapshots](learn/state-as-a-snapsho
 You can think of the props and state values as snapshots that are updated after rendering. For this reason, you don't modify the props or state variables directly: instead you pass new props, or use the setter function provided to you to tell React that state needs to update the next time the component is rendered.
 
 ### Don't mutate Props {/*props*/}
-Props are immutable because if you mutate them, the application will produce inconsistent output, which can be hard to debug since it may or may not work depending on the circumstance.
+Props are immutable because if you mutate them, the application will produce inconsistent output, which can be hard to debug as it may or may not work depending on the circumstances.
 
-```js {2}
+```js {expectedErrors: {'react-compiler': [2]}} {2}
 function Post({ item }) {
   item.url = new Url(item.url, base); // 🔴 Bad: never mutate props directly
   return <Link url={item.url}>{item.title}</Link>;
@@ -232,7 +232,7 @@ const [stateVariable, setter] = useState(0);
 
 Rather than updating the state variable in-place, we need to update it using the setter function that is returned by `useState`. Changing values on the state variable doesn't cause the component to update, leaving your users with an outdated UI. Using the setter function informs React that the state has changed, and that we need to queue a re-render to update the UI.
 
-```js {5}
+```js {expectedErrors: {'react-compiler': [2, 5]}} {5}
 function Counter() {
   const [count, setCount] = useState(0);
 
@@ -270,7 +270,7 @@ function Counter() {
 
 Once values are passed to a hook, you should not modify them. Like props in JSX, values become immutable when passed to a hook.
 
-```js {4}
+```js {expectedErrors: {'react-compiler': [4]}} {4}
 function useIconStyle(icon) {
   const theme = useContext(ThemeContext);
   if (icon.enabled) {
@@ -307,7 +307,7 @@ function useIconStyle(icon) {
 }
 ```
 
-If you were to mutate the hooks arguments, the custom hook's memoization will become incorrect,  so it's important to avoid doing that.
+If you were to mutate the Hook's arguments, the custom hook's memoization will become incorrect,  so it's important to avoid doing that.
 
 ```js {4}
 style = useIconStyle(icon);         // `style` is memoized based on `icon`
@@ -321,17 +321,17 @@ icon = { ...icon, enabled: false }; // Good: ✅ make a copy instead
 style = useIconStyle(icon);         // new value of `style` is calculated
 ```
 
-Similarly, it's important to not modify the return values of hooks, as they may have been memoized.
+Similarly, it's important to not modify the return values of Hooks, as they may have been memoized.
 
 ---
 
 ## Values are immutable after being passed to JSX {/*values-are-immutable-after-being-passed-to-jsx*/}
 
-Don't mutate values after they've been used in JSX. Move the mutation before the JSX is created.
+Don't mutate values after they've been used in JSX. Move the mutation to before the JSX is created.
 
 When you use JSX in an expression, React may eagerly evaluate the JSX before the component finishes rendering. This means that mutating values after they've been passed to JSX can lead to outdated UIs, as React won't know to update the component's output.
 
-```js {4}
+```js {expectedErrors: {'react-compiler': [4]}} {4}
 function Page({ colour }) {
   const styles = { colour, size: "large" };
   const header = <Header styles={styles} />;
