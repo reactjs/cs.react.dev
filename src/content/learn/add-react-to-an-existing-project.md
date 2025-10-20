@@ -20,11 +20,19 @@ Představme si, že máte existující webovou aplikaci na adrese `example.com`,
 
 Zde je náš doporučený postup:
 
+<<<<<<< HEAD
 1. **Vytvořte část aplikace** pomocí některého z [frameworků založených na Reactu](/learn/start-a-new-react-project).
 2. **Nastavte `/obchod` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/obchod/` zpracovávala vaše aplikace v Reactu.
 
 Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/start-a-new-react-project#can-i-use-react-without-a-framework), které jsou součástí těchto frameworků.
+=======
+1. **Build the React part of your app** using one of the [React-based frameworks](/learn/start-a-new-react-project).
+2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+
+This ensures the React part of your app can [benefit from the best practices](/learn/build-a-react-app-from-scratch#consider-using-a-framework) baked into those frameworks.
+>>>>>>> f8c81a0f4f8e454c850f0c854ad054b32313345c
 
 Mnoho frameworků založených na Reactu je full-stack, což umožňuje vaší React aplikaci využít server. Tento přístup můžete uplatnit i v případě, kdy nemůžete nebo nechcete na serveru používat JavaScript. V takové situaci místo toho zpřístupníte export HTML/CSS/JS ([output v `next export`](https://nextjs.org/docs/advanced-features/static-html-export) pro Next.js, default pro Gatsby) na adresářové cestě `/obchod/`.
 
@@ -45,7 +53,11 @@ Modulární prostředí JavaScriptu umožňuje psát React komponenty v jednotli
 
 * **Pokud je vaše aplikace již rozdělena do souborů využívajících příkazy `import`,** můžete vyzkoušet existující nastavení. Ujistěte se, že zápis `<div />` ve vašem JavaScript kód nezpůsobuje syntaktickou chybu. Pokud to syntaktickou chybu způsobí, bude možná nutné použít [nástroj Babel k transformaci vašeho JavaScriptového kódu](https://babeljs.io/setup) a aktivovat [předvolbu Babel React](https://babeljs.io/docs/babel-preset-react) pro použití JSX.
 
+<<<<<<< HEAD
 * **Pokud vaše aplikace nemá již existující nastavení pro kompilaci JavaScriptových modulů,** nastavte jej pomocí [Vite](https://vitejs.dev/). Komunita Vite se stará o [řadu integrací s backendovými frameworky](https://github.com/vitejs/awesome-vite#integrations-with-backends), včetně Rails, Django a Laravel. Pokud váš backendový framework není v seznamu uveden, [postupujte podle tohoto návodu](https://vitejs.dev/guide/backend-integration.html) a manuálně integrujte Vite do vašeho backendu.
+=======
+* **If your app doesn't have an existing setup for compiling JavaScript modules,** set it up with [Vite](https://vite.dev/). The Vite community maintains [many integrations with backend frameworks](https://github.com/vitejs/awesome-vite#integrations-with-backends), including Rails, Django, and Laravel. If your backend framework is not listed, [follow this guide](https://vite.dev/guide/backend-integration.html) to manually integrate Vite builds with your backend.
+>>>>>>> f8c81a0f4f8e454c850f0c854ad054b32313345c
 
 Pokud chcete ověřit, zda je vaše nastavení funkční, spusťte následující příkaz v adresáři projektu:
 
@@ -57,12 +69,17 @@ Poté přidejte následující řádky kódu na začátek svého hlavního JavaS
 
 <Sandpack>
 
-```html index.html hidden
+```html public/index.html hidden
 <!DOCTYPE html>
 <html>
   <head><title>My app</title></head>
   <body>
+<<<<<<< HEAD
     <!-- Váš stávající obsah stránky (v tomto příkladu bude nahrazen) -->
+=======
+    <!-- Your existing page content (in this example, it gets replaced) -->
+    <div id="root"></div>
+>>>>>>> f8c81a0f4f8e454c850f0c854ad054b32313345c
   </body>
 </html>
 ```
@@ -84,7 +101,11 @@ Pokud byl celý obsah stránky nahrazen nápisem "Hello, world", vše funguje sp
 
 <Note>
 
+<<<<<<< HEAD
 První integrace modulárního prostředí JavaScriptu do existujícího projektu může působit zastrašujícím dojmem, ale výsledky stojí za to! Pokud narazíte na problémy, využijte naše [komunitní zdroje ](/community) nebo se obrate na [Vite Chat](https://chat.vitejs.dev/).
+=======
+Integrating a modular JavaScript environment into an existing project for the first time can feel intimidating, but it's worth it! If you get stuck, try our [community resources](/community) or the [Vite Chat](https://chat.vite.dev/).
+>>>>>>> f8c81a0f4f8e454c850f0c854ad054b32313345c
 
 </Note>
 
@@ -119,7 +140,7 @@ Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElemen
 
 <Sandpack>
 
-```html index.html
+```html public/index.html
 <!DOCTYPE html>
 <html>
   <head><title>My app</title></head>
