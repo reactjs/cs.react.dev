@@ -64,11 +64,7 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
       <div className="bg-gray-90 dark:bg-gray-60 w-full rounded-t-lg">
         <div className="text-primary-dark dark:text-primary-dark flex text-sm px-4 py-0.5 relative justify-between">
           <div>
-<<<<<<< HEAD
             <IconTerminal className="inline-flex mr-2 self-center" /> Terminál
-=======
-            <IconTerminal className="inline-flex me-2 self-center" /> Terminal
->>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
           </div>
           <div>
             <button
@@ -77,13 +73,8 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
                 window.navigator.clipboard.writeText(message ?? '');
                 setCopied(true);
               }}>
-<<<<<<< HEAD
               <IconCopy className="inline-flex mr-2 self-center" />{' '}
               {copied ? 'Zkopírováno' : 'Kopírovat'}
-=======
-              <IconCopy className="inline-flex me-2 self-center" />{' '}
-              {copied ? 'Copied' : 'Copy'}
->>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
             </button>
           </div>
         </div>
