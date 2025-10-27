@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -17,9 +24,9 @@ interface TerminalBlockProps {
 function LevelText({type}: {type: LogLevel}) {
   switch (type) {
     case 'warning':
-      return <span className="text-yellow-50 bg-none mr-1">Warning: </span>;
+      return <span className="text-yellow-50 bg-none me-1">Warning: </span>;
     case 'error':
-      return <span className="text-red-40 mr-1">Error: </span>;
+      return <span className="text-red-40 me-1">Error: </span>;
     default:
       return null;
   }
@@ -31,9 +38,11 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
     message = children;
   } else if (
     isValidElement(children) &&
-    typeof children.props.children === 'string'
+    typeof (children as React.ReactElement<{children: string}>).props
+      .children === 'string'
   ) {
-    message = children.props.children;
+    message = (children as React.ReactElement<{children: string}>).props
+      .children;
   } else {
     throw Error('Expected TerminalBlock children to be a plain string.');
   }
@@ -59,7 +68,7 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
           </div>
           <div>
             <button
-              className="w-full text-left text-primary-dark dark:text-primary-dark "
+              className="w-full text-start text-primary-dark dark:text-primary-dark "
               onClick={() => {
                 window.navigator.clipboard.writeText(message ?? '');
                 setCopied(true);
@@ -70,7 +79,10 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
           </div>
         </div>
       </div>
-      <div className="px-8 pt-4 pb-6 text-primary-dark dark:text-primary-dark font-mono text-code whitespace-pre">
+      <div
+        className="px-8 pt-4 pb-6 text-primary-dark dark:text-primary-dark font-mono text-code whitespace-pre overflow-x-auto"
+        translate="no"
+        dir="ltr">
         <LevelText type={level} />
         {message}
       </div>

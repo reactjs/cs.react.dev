@@ -15,7 +15,7 @@ export function ResetButton({onReset}: ResetButtonProps) {
       onClick={onReset}
       title="Obnovit Sandbox"
       type="button">
-      <IconRestart className="inline ml-1 mr-1 relative" /> Obnovit
+      <IconRestart className="inline mx-1 mr-1 relative" /> Obnovit
     </button>
   );
 }

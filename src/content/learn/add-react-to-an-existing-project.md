@@ -21,10 +21,10 @@ Představme si, že máte existující webovou aplikaci na adrese `example.com`,
 Zde je náš doporučený postup:
 
 1. **Vytvořte část aplikace** pomocí některého z [frameworků založených na Reactu](/learn/start-a-new-react-project).
-2. **Nastavte `/obchod` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
-3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/obchod/` zpracovávala vaše aplikace v Reactu.
+2. **Nastavte `/some-app` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/some-app/` zpracovávala vaše aplikace v Reactu.
 
-Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/start-a-new-react-project#can-i-use-react-without-a-framework), které jsou součástí těchto frameworků.
+Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/build-a-react-app-from-scratch#consider-using-a-framework), které jsou součástí těchto frameworků.
 
 Mnoho frameworků založených na Reactu je full-stack, což umožňuje vaší React aplikaci využít server. Tento přístup můžete uplatnit i v případě, kdy nemůžete nebo nechcete na serveru používat JavaScript. V takové situaci místo toho zpřístupníte export HTML/CSS/JS ([output v `next export`](https://nextjs.org/docs/advanced-features/static-html-export) pro Next.js, default pro Gatsby) na adresářové cestě `/obchod/`.
 
@@ -57,17 +57,18 @@ Poté přidejte následující řádky kódu na začátek svého hlavního JavaS
 
 <Sandpack>
 
-```html index.html hidden
+```html public/index.html hidden
 <!DOCTYPE html>
 <html>
   <head><title>My app</title></head>
   <body>
     <!-- Váš stávající obsah stránky (v tomto příkladu bude nahrazen) -->
+    <div id="root"></div>
   </body>
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
 // Nahradí existující obsah HTML
@@ -84,7 +85,7 @@ Pokud byl celý obsah stránky nahrazen nápisem "Hello, world", vše funguje sp
 
 <Note>
 
-První integrace modulárního prostředí JavaScriptu do existujícího projektu může působit zastrašujícím dojmem, ale výsledky stojí za to! Pokud narazíte na problémy, využijte naše [komunitní zdroje ](/community) nebo se obrate na [Vite Chat](https://chat.vitejs.dev/).
+První integrace modulárního prostředí JavaScriptu do existujícího projektu může působit zastrašujícím dojmem, ale výsledky stojí za to! Pokud narazíte na problémy, využijte naše [komunitní zdroje](/community) nebo se obrate na [Vite Chat](https://chat.vitejs.dev/).
 
 </Note>
 
@@ -119,7 +120,7 @@ Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElemen
 
 <Sandpack>
 
-```html index.html
+```html public/index.html
 <!DOCTYPE html>
 <html>
   <head><title>My app</title></head>
@@ -131,7 +132,7 @@ Toto vám umožní vyhledat tento HTML prvek pomocí funkce [`document.getElemen
 </html>
 ```
 
-```js index.js active
+```js src/index.js active
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {

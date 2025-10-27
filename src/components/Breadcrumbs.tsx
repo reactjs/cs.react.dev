@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -17,10 +24,10 @@ function Breadcrumbs({breadcrumbs}: {breadcrumbs: RouteItem[]}) {
               <Fragment key={crumb.path}>
                 <Link
                   href={crumb.path}
-                  className="text-link dark:text-link-dark text-sm tracking-wide font-bold uppercase mr-1 hover:underline">
+                  className="text-link dark:text-link-dark text-sm tracking-wide font-bold uppercase me-1 hover:underline">
                   {crumb.title}
                 </Link>
-                <span className="inline-block mr-1 text-link dark:text-link-dark text-lg">
+                <span className="inline-block me-1 text-link dark:text-link-dark text-lg rtl:rotate-180">
                   <svg
                     width="20"
                     height="20"
