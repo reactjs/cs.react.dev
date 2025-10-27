@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 /*
  * Copyright (c) Facebook, Inc. and its affiliates.
  */
@@ -31,9 +38,11 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
     message = children;
   } else if (
     isValidElement(children) &&
-    typeof children.props.children === 'string'
+    typeof (children as React.ReactElement<{children: string}>).props
+      .children === 'string'
   ) {
-    message = children.props.children;
+    message = (children as React.ReactElement<{children: string}>).props
+      .children;
   } else {
     throw Error('Expected TerminalBlock children to be a plain string.');
   }
@@ -55,11 +64,7 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
       <div className="bg-gray-90 dark:bg-gray-60 w-full rounded-t-lg">
         <div className="text-primary-dark dark:text-primary-dark flex text-sm px-4 py-0.5 relative justify-between">
           <div>
-<<<<<<< HEAD
             <IconTerminal className="inline-flex mr-2 self-center" /> Terminál
-=======
-            <IconTerminal className="inline-flex me-2 self-center" /> Terminal
->>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
           </div>
           <div>
             <button
@@ -68,19 +73,14 @@ function TerminalBlock({level = 'info', children}: TerminalBlockProps) {
                 window.navigator.clipboard.writeText(message ?? '');
                 setCopied(true);
               }}>
-<<<<<<< HEAD
               <IconCopy className="inline-flex mr-2 self-center" />{' '}
               {copied ? 'Zkopírováno' : 'Kopírovat'}
-=======
-              <IconCopy className="inline-flex me-2 self-center" />{' '}
-              {copied ? 'Copied' : 'Copy'}
->>>>>>> 819518cfe32dd2db3b765410247c30feea713c77
             </button>
           </div>
         </div>
       </div>
       <div
-        className="px-8 pt-4 pb-6 text-primary-dark dark:text-primary-dark font-mono text-code whitespace-pre overflow-x-scroll"
+        className="px-8 pt-4 pb-6 text-primary-dark dark:text-primary-dark font-mono text-code whitespace-pre overflow-x-auto"
         translate="no"
         dir="ltr">
         <LevelText type={level} />
