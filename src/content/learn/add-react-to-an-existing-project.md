@@ -24,7 +24,7 @@ Zde je náš doporučený postup:
 2. **Nastavte `/some-app` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/some-app/` zpracovávala vaše aplikace v Reactu.
 
-Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/start-a-new-react-project#can-i-use-react-without-a-framework), které jsou součástí těchto frameworků.
+Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/build-a-react-app-from-scratch#consider-using-a-framework), které jsou součástí těchto frameworků.
 
 Mnoho frameworků založených na Reactu je full-stack, což umožňuje vaší React aplikaci využít server. Tento přístup můžete uplatnit i v případě, kdy nemůžete nebo nechcete na serveru používat JavaScript. V takové situaci místo toho zpřístupníte export HTML/CSS/JS ([output v `next export`](https://nextjs.org/docs/advanced-features/static-html-export) pro Next.js, default pro Gatsby) na adresářové cestě `/obchod/`.
 
