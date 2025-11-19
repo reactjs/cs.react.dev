@@ -20,9 +20,15 @@ Představme si, že máte existující webovou aplikaci na adrese `example.com`,
 
 Zde je náš doporučený postup:
 
+<<<<<<< HEAD
 1. **Vytvořte část aplikace** pomocí některého z [frameworků založených na Reactu](/learn/start-a-new-react-project).
 2. **Nastavte `/some-app` jako *základní cestu*** v konfiguraci vašeho frameworku (zde je návod pro: [Next.js](https://nextjs.org/docs/api-reference/next.config.js/basepath) a [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
 3. **Nakonfigurujte svůj server nebo proxy server** tak, aby všechny požadavky na cestu `/some-app/` zpracovávala vaše aplikace v Reactu.
+=======
+1. **Build the React part of your app** using one of the [React-based frameworks](/learn/creating-a-react-app).
+2. **Specify `/some-app` as the *base path*** in your framework's configuration (here's how: [Next.js](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath), [Gatsby](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/path-prefix/)).
+3. **Configure your server or a proxy** so that all requests under `/some-app/` are handled by your React app.
+>>>>>>> 2534424ec6c433cc2c811d5a0bd5a65b75efa5f0
 
 Tímto zajistíte, že část vaší aplikace napsaná Reactu bude využívat [osvědčené postupy a praktiky](/learn/build-a-react-app-from-scratch#consider-using-a-framework), které jsou součástí těchto frameworků.
 
@@ -149,7 +155,11 @@ root.render(<NavigationBar />);
 
 Všimněte si, že původní obsah HTML ze souboru `index.html` zůstává nezměněn, zatímco vaše vlastní React komponenta `NavigationBar` se nyní zobrazuje uvnitř `<nav id="navigation">` v rámci vašeho HTML. Pro hlubší pochopení rendrování React komponentů uvnitř existující HTML stránky, doporučujeme prostudovat dokumentaci k funkci [`createRoot`](/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react).
 
+<<<<<<< HEAD
 Běžným postupem při implementaci Reactu do existujícího projektu je začít s malými interaktivními komponenty (např. tlačítky) a postupně "postupovat nahoru", dokud celou stránku netvoří komponenty React. Pokud někdy dosáhnete tohoto bodu, doporučujeme hned poté přejít na [React framework](/learn/start-a-new-react-project), abyste z něj mohli vytěžit maximum.
+=======
+When you adopt React in an existing project, it's common to start with small interactive components (like buttons), and then gradually keep "moving upwards" until eventually your entire page is built with React. If you ever reach that point, we recommend migrating to [a React framework](/learn/creating-a-react-app) right after to get the most out of React.
+>>>>>>> 2534424ec6c433cc2c811d5a0bd5a65b75efa5f0
 
 ## Implementace React Native do existující nativní mobilní aplikace {/*using-react-native-in-an-existing-native-mobile-app*/}
 
