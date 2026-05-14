@@ -36,11 +36,7 @@
     "classnames": "^2.2.6",
     "debounce": "^1.2.1",
     "github-slugger": "^1.3.0",
-<<<<<<< HEAD
-    "next": "15.5.15",
-=======
-    "next": "15.1.12",
->>>>>>> abe931a8cb3aee3e8b15ef7e187214789164162a
+    "next": "15.5.18",
     "next-remote-watch": "^1.0.0",
     "parse-numeric-range": "^1.2.0",
     "raw-loader": "^4.0.2",
